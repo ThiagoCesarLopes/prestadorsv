@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="feedbacktypelist">
+        <item>@string/feedbacktype1</item>
+        <item>@string/feedbacktype2</item>
+        <item>@string/feedbacktype3</item>
+        <item>@string/feedbacktype4</item>
+    </string-array>
+
+    <string-array name="Cadastrolist">
+        <item>@string/cadastrobacktype</item>
+        <item>@string/cadastrobacktype2</item>
+     </string-array>
+
+    <string-array name="CadastroUrgenciaServicoCliente">
+        <item>@string/CadastroUrgenciaServico1</item>
+        <item>@string/CadastroUrgenciaServico2</item>
+        <item>@string/CadastroUrgenciaServico3</item>
+        <item>@string/CadastroUrgenciaServico4</item>
+    </string-array>
+
+
+    <!--Inicio  Lista de Bairros -->
+    <string-array name="ListaBairro">
+        <item>@string/ListaBairro</item>
+        <item>@string/ListaBairro1</item>
+        <item>@string/ListaBairro2</item>
+        <item>@string/ListaBairro3</item>
+        <item>@string/ListaBairro4</item>
+        <item>@string/ListaBairro5</item>
+        <item>@string/ListaBairro6</item>
+        <item>@string/ListaBairro7</item>
+        <item>@string/ListaBairro8</item>
+        <item>@string/ListaBairro9</item>
+        <item>@string/ListaBairro10</item>
+        <item>@string/ListaBairro11</item>
+        <item>@string/ListaBairro12</item>
+        <item>@string/ListaBairro13</item>
+        <item>@string/ListaBairro14</item>
+        <item>@string/ListaBairro15</item>
+        <item>@string/ListaBairro16</item>
+        <item>@string/ListaBairro17</item>
+    </string-array>
+    <!--Fim  Lista de Bairros -->
+</resources>

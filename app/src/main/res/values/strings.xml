@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">Prestador de Serviços -VF</string>
+    <string name="cadastro">Preencha o Formulario:</string>
+    <string name="cadendereco">Endereço:</string>
+    <string name="cadastrobacktype">Prestador de Serviço</string>
+    <string name="cadastrobacktype2">Usuário</string>
+    <string name="garantia">Sim, Esta em garantia caso seja produto.</string>
+    <string name="cadastroNovoCliente">Preencha o Cadastro </string>
+    <string name="Servico">Descreva o Serviço: </string>
+
+
+    <string name="CadastroUrgenciaServico1">Selecione a Urgência:</string>
+    <string name="CadastroUrgenciaServico2">Hoje</string>
+    <string name="CadastroUrgenciaServico3">Essa Semana</string>
+    <string name="CadastroUrgenciaServico4">Fim de Semana</string>
+
+
+<string
+name="chooser">Send message using:</string>
+<string
+name="chooser_pic">Send picture using:</string>
+<string
+name="buttontext_simpleemail_chooser">Send a message (Choose app to send)
+    </string>
+<string
+name="buttontext_email">Send plaintext message (with supplied content)
+    </string>
+<string
+    name="hello">O que podemos ajudar?</string>
+    <string
+        name="buttontext_simpleemail">Send plain text</string>
+<string
+    name="buttontext_feedback">Sugestões ou Problema</string>
+<string
+name="buttontext_msg_pic">Send picture msg (with supplied content)
+    </string>
+<string
+name="email_message">This is my message body.\n\nCheers,\nMe
+    </string>
+<string
+name="email_subject">This is my subject</string>
+<string
+name="email_address">thiago2012cesar@gmail.com</string>
+<string
+name="email_address_cc">thiago2012cesar@gmail.com</string>
+<string
+name="email_address_bcc">thiago2012cesar@gmail.com</string>
+
+<string
+name="feedbacktitle">Suporte ou Feedback? </string>
+<string
+name="feedbackname">Nome</string>
+<string
+name="feedbackemail">Email</string>
+<string
+name="feedbackbody">Feedback ou Problemas</string>
+<string
+name="feedbackresponse">Gostaria de resposta deste email?</string>
+<string
+name="feedbackbutton">Enviar</string>
+<string
+name="feedbacktype">Entre aqui com feedback ou problema</string>
+
+<string
+name="feedbacktype1">Problemas</string>
+<string
+name="feedbacktype2">Melhorias</string>
+<string
+name="feedbacktype3">Sugestões</string>
+<string
+name="feedbacktype4">Erro</string>
+
+
+<string
+name="feedbackmessagebody_format">To: The %1$s Department\n\n %2$s\n\n %3$s (%4$s) - %5$s
+    </string>
+<string
+name="feedbackmessagebody_responseyes">Requires a response</string>
+<string
+name="feedbackmessagebody_responseno">Does not require a response</string>
+<string
+name="feedbackmessagesubject_format">Application Feedback (%1$s)</string>
+
+    <!--Inicio  Lista de Bairros -->
+    <string name="SpinnerListaBairro">ListaBairro</string>
+    <!--A -->
+    <string name="ListaBairro">Selecione o Bairro para o Serviço:</string>
+    <string name="ListaBairro1">A</string>
+    <string name="ListaBairro2">Aclimação</string>
+    <string name="ListaBairro3">Água Branca</string>
+    <string name="ListaBairro4">Água Fria</string>
+    <string name="ListaBairro5">Água Funda</string>
+    <string name="ListaBairro6">Água Rasa</string>
+    <string name="ListaBairro7">Alto da Boa Vista</string>
+    <string name="ListaBairro8">Alto da Lapa</string>
+    <string name="ListaBairro9">Alto da Mooca</string>
+    <string name="ListaBairro10">Alto da Riviera</string>
+    <string name="ListaBairro11">Alto de Pinheiros</string>
+    <string name="ListaBairro12">Alto do Pari</string>
+    <string name="ListaBairro13">Altos de Vila Prudente</string>
+    <string name="ListaBairro14">Americanópolis</string>
+    <string name="ListaBairro15">Anhanguera</string>
+    <string name="ListaBairro16">Artur Alvim</string>
+    <string name="ListaBairro17">Associação Sobradinho</string>
+    <!--B -->
+    <!--Fim Lista de Bairros -->
+
+</resources>

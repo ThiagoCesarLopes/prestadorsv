@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+     <TabHost
+        android:id="@+id/tabHost"
+        android:layout_width="385dp"
+        android:layout_height="515dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="#BEBEBE"
+        android:fadeScrollbars="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0"
+                android:background="@android:color/background_light"></TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+               >
+
+                <LinearLayout
+                    android:id="@+id/Principal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/Principal2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btnserviços_pintor"
+                            android:layout_width="120dp"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_pintor"
+                            android:onClick="onclickIncluirPintor"
+                            android:text="Pintor" />
+
+                        <Button
+                            android:id="@+id/btnservicos_manicure"
+                            android:layout_width="120dp"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_manicure"
+                            android:onClick="onclickIncluirManicure"
+                            android:text="Manicure" />
+
+                        <Button
+                            android:id="@+id/btnserviços_cabeleleiro"
+                            android:layout_width="120dp"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_beauty"
+                            android:text="Cabeleleiros" />
+
+                        <Button
+                            android:id="@+id/btnservicos_encanador"
+                            android:layout_width="120dp"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_people"
+                            android:text="Encanador" />
+
+                        <Button
+                            android:id="@+id/btnserviços_eletricista"
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_pintor"
+                            android:text="Eletricista" />
+
+                        <Button
+                            android:id="@+id/btnserviços_baba"
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_pintor"
+                            android:text="Babá" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/Principal3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btnservicos_roupa2"
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_costureira"
+                            android:text="Costureiras" />
+
+                        <Button
+                            android:id="@+id/chaveiro"
+                            android:layout_width="120dp"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_veiculo"
+                            android:text="Chaveiros" />
+
+                        <Button
+                            android:id="@+id/btnservicos_gerais"
+                            android:layout_width="120dp"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_housekeeper"
+                            android:text="Diaristas" />
+
+                        <Button
+                            android:id="@+id/btnservicos_pedreiro"
+                            android:layout_width="120dp"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_pedreiro"
+                            android:text="Pedreiros" />
+
+                        <Button
+                            android:id="@+id/btnservicos_marcineiro"
+                            android:layout_width="120dp"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_costureira"
+                            android:text="Marcineiro" />
+
+                        <Button
+                            android:id="@+id/btnserviços_vidraceiro"
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_pintor"
+                            android:text="Vidraceiro" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/Principal4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/btnserviços_Cozinheiro"
+                            android:layout_width="120dp"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_cooking"
+                            android:text="Cozinheiro" />
+
+                        <Button
+                            android:id="@+id/btnservicos_Celular"
+                            android:layout_width="120dp"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_celular"
+                            android:text="Celulares" />
+
+                        <Button
+                            android:id="@+id/btnserviços_Fisioterapeuta"
+                            android:layout_width="120dp"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_physiotherapy"
+                            android:text="Fisioterapeuta" />
+
+                        <Button
+                            android:id="@+id/btnservicos_esteticista"
+                            android:layout_width="120dp"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_woman_face"
+                            android:text="Esteticista" />
+
+                        <Button
+                            android:id="@+id/btnserviços_barman"
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_barman"
+                            android:text="BarMan" />
+
+                        <Button
+                            android:id="@+id/btnserviços_borracheiro"
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:background="#D3D3D3"
+                            android:drawableTop="@drawable/ic_servico"
+                            android:text="Borracheiro" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Cadastrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/TextViewTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/common_google_signin_btn_text_dark_default"
+                        android:text="@string/cadastro"
+                        android:textSize="10pt"/>
+
+                    <Spinner
+                        android:id="@+id/SpinnerFeedbackType"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:entries="@array/Cadastrolist"
+                        android:prompt="@string/cadastrobacktype"/>
+
+                    <EditText
+                        android:id="@+id/edNome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="top"
+                        android:hint="nome"
+                        android:inputType="textPersonName"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/edTelefone"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="bottom"
+                        android:hint="Telefone"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/edcelular"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:hint="celular"
+                        android:inputType="textPersonName"
+                        android:singleLine="true" />
+
+                    <EditText
+                        android:id="@+id/EditTextName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/cadendereco"
+                        android:inputType="textPersonName"/>
+
+                    <EditText
+                        android:id="@+id/EditTextEmail"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/feedbackemail"
+                        android:inputType="textEmailAddress"/>
+
+                    <EditText
+                        android:id="@+id/EditTextFeedbackBody"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/feedbackbody"
+                        android:inputType="textMultiLine"
+                        android:lines="5"/>
+
+                    <CheckBox
+                        android:id="@+id/CheckBoxResponse"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/feedbackresponse"/>
+
+                    <Button
+                        android:id="@+id/btnconfirmar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:onClick="clickConfirmar"
+                        android:text="Salvar" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Contato"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/ScrollView01"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="30dp"
+                        android:scrollbars="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="top"
+                                android:layout_marginBottom="30dp"
+                                android:background="@android:color/background_light"
+                                android:gravity="center_horizontal"
+                                android:text="@string/hello"
+                                android:textSize="24sp" />
+
+                            <Button
+                                android:id="@+id/Button_Feedback"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:onClick="onclicklaunchForm"
+                                android:text="@string/buttontext_feedback"></Button>
+
+                        </LinearLayout>
+                    </ScrollView>
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+</android.support.constraint.ConstraintLayout>
