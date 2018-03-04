@@ -15,5 +15,9 @@ public class CadastroNovo extends Activity {
     public void onClickConfirmarClienteCadastro (View v)
     {
         startActivityForResult(new Intent(this,ListaServicoActivity.class),1);
+        //teste
+
+
+
     }
 }
