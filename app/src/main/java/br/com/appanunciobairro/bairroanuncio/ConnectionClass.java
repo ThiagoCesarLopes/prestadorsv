@@ -6,8 +6,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
+
 public class ConnectionClass {
-    String ip = "127.0.0.1";
+    String ip = "192.168.0.33:1433";
     String classs = "net.sourceforge.jtds.jdbc.Driver";
     String db = "DB_PrestadorServico";
     String un = "sa";

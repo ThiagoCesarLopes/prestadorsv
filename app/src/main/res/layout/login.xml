@@ -81,7 +81,7 @@
             android:layout_weight="50"
             android:backgroundTint="@color/colorPrimaryDark"
             android:text="Login"
-            android:onClick="onclicklogar"/>
+            android:onClick="btn_Login"/>
 
         <Button
             android:id="@+id/btn_CadastroNovo"

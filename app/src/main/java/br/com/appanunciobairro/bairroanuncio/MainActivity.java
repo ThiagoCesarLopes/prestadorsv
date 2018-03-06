@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // connectionClass = new ConnectionClass();
+        //connectionClass = new ConnectionClass();
         edtuserid = (EditText) findViewById(R.id.et_username);
         edtpass = (EditText) findViewById(R.id.et_password);
         btnlogin = (Button) findViewById(R.id.btn_Login);
@@ -132,97 +132,7 @@ public class MainActivity extends AppCompatActivity {
          startActivityForResult(new Intent(this,FormActivity.class),1);
     }
 
-    public class DoLogin extends AsyncTask<String,String,String>
-    {
-        String z = "";
-        Boolean isSuccess = false;
-
-
-        @Override
-        protected void onPreExecute() {
-            pbbar.setVisibility(View.VISIBLE);
-        }
-        @Override
-        protected String doInBackground(String... params) {
-
-            String user_name = edtuserid.getText().toString();
-            String password = edtpass.getText().toString();
-
-            if(user_name.trim().equals("")|| password.trim().equals(""))
-                z = "Please enter User Id and Password";
-            else
-            {
-                try {
-                    //Connection con = connectionClass.CONN();
-                    con =connectionClass(un,pass,db,ip); //connect to database
-                    if (con == null) {
-                        z = "Error in connection with SQL server";
-                    } else {
-
-                        String query = "select * from TB_USER where user_name='" + user_name.toString() + "' and password='" + password.toString() + "'";
-                        Statement stmt = con.createStatement();
-                        ResultSet rs = stmt.executeQuery(query);
-                        Log.d(z, "Login sucesso");
-                        if(rs.next())
-                        {
-
-                            z = "Login Successfull";
-                            isSuccess=true;
-                            Log.d(z, "Login sucesso");
-                        }
-                        else
-                        {
-                            z = "Invalid Credentials";
-                            isSuccess = false;
-                        }
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    isSuccess = false;
-                    z = "Exceptions";
-                }
-            }
-            return z;
-        }
-        @Override
-        protected void onPostExecute(String r) {
-     //       pbbar.setVisibility(View.GONE);
-            Toast.makeText(MainActivity.this,r,Toast.LENGTH_SHORT).show();
-
-            if(isSuccess) {
-                Toast.makeText(MainActivity.this,"Login Successful",Toast.LENGTH_SHORT).show();
-            }
-
-        }
-
-
-    }
-
-    @SuppressLint("NewApi")
-    public Connection connectionClass(String user, String password, String database, String Server) {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        Connection connection = null;
-        String ConnURL = null;
-        try {
-
-            Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            ConnURL = "jdbc:jtds:sqlserver://" + ip + database+ ";user=" + user + ";password=" + password + ";";
-            connection = DriverManager.getConnection(ConnURL);
-
-        } catch (SQLException se) {
-            Log.e("ERRO 1", se.getMessage());
-        } catch (ClassNotFoundException e) {
-            Log.e("ERRO 2", e.getMessage());
-        } catch (Exception e) {
-            Log.e("ERRO 3", e.getMessage());
-        }
-        return connection;
-
-    }
-
+ 
     public void onclickIncluirPintor(View v){
             startActivityForResult(new Intent(this,ServiceActivity.class),1);
         }
