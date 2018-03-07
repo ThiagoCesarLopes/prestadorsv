@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cadastrar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,7 +20,7 @@
         android:id="@+id/SpinnerFeedbackType"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:entries="@array/Cadastrolist"
         android:prompt="@string/cadastrobacktype"></Spinner>
 
@@ -27,62 +28,26 @@
         android:id="@+id/edNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:gravity="top"
-        android:hint="Qual o Serviço ou Produto?"
+        android:hint="Titulo do Serviço:"
         android:inputType="textPersonName"
         android:singleLine="true" />
-
-    <EditText
-        android:id="@+id/edTelefone"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:gravity="bottom"
-        android:hint="Para quando você precisa deste serviço?"
-        android:singleLine="true" />
-
-    <EditText
-        android:id="@+id/edcelular"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:hint="Endereço:"
-        android:inputType="textPersonName"
-        android:singleLine="true" />
-
-    <EditText
-        android:id="@+id/EditTextName"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="Numero"
-        android:inputType="textPersonName"></EditText>
-
-    <EditText
-        android:id="@+id/EditTextEmail"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/feedbackemail"
-        android:inputType="textEmailAddress"></EditText>
 
     <EditText
         android:id="@+id/EditTextFeedbackBody"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="252dp"
+        android:layout_marginTop="15dp"
         android:hint="Informações Adicionais"
         android:inputType="textMultiLine"
         android:lines="5"></EditText>
-
-    <CheckBox
-        android:id="@+id/CheckBoxResponse"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/garantia"></CheckBox>
 
     <Button
         android:id="@+id/btnconfirmar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:background="@color/colorPrimary"
         android:onClick="OnclickCadastrarServico"
         android:text="Cadastrar Serviço" />

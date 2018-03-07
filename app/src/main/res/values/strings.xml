@@ -2,8 +2,11 @@
     <string name="app_name">Prestador de Serviços -VF</string>
     <string name="cadastro">Preencha o Formulario:</string>
     <string name="cadendereco">Endereço:</string>
-    <string name="cadastrobacktype">Prestador de Serviço</string>
-    <string name="cadastrobacktype2">Usuário</string>
+    <string name="cadastrobacktype">Urgência</string>
+    <string name="cadastrobacktype2">Hoje:</string>
+    <string name="cadastrobacktype3">Essa Semana:</string>
+    <string name="cadastrobacktype4">Fim de Semana</string>
+
     <string name="garantia">Sim, Esta em garantia caso seja produto.</string>
     <string name="cadastroNovoCliente">Preencha o Cadastro </string>
     <string name="Servico">Descreva o Serviço: </string>

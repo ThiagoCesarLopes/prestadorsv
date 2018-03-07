@@ -35,7 +35,6 @@ public class ClienteActivity extends Activity {
         pbbar = (ProgressBar) findViewById(R.id.pbbar);
         pbbar.setVisibility(View.GONE);
 
-        //Intent it = new Intent(this, ListaServicoActivity.class);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +71,7 @@ public class ClienteActivity extends Activity {
 
             if(isSuccess) {
                 Toast.makeText(ClienteActivity.this,r,Toast.LENGTH_SHORT).show();
-                setContentView(R.layout.list_service_provider);
+               // setContentView(R.layout.list_service_provider);
                 //context.startActivity(new Intent(context,ListaServicoActivity.class));
                 //this.context = context.getApplicationContext();
 

@@ -20,15 +20,15 @@
             android:gravity="center"
             android:text="Selecione o Prestador:"
             android:textColor="#1f66ab"
-            android:textSize="35sp"
+            android:textSize="15sp"
             android:typeface="sans" />
 
         <LinearLayout
             android:id="@+id/header"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:background="#1f66AB"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
             android:orientation="horizontal"
             android:paddingBottom="3dp"
             android:paddingTop="3dp">
@@ -47,30 +47,34 @@
                 android:typeface="sans" />
 
             <TextView
-            android:id="@+id/txtLastNam"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:height="40dip"
-            android:gravity="center"
-            android:text="Segundo Nome"
-            android:textAlignment="center"
-            android:textColor="#ffffff"
-            android:textSize="14sp"
-            android:typeface="sans" />
-
-            <TextView
-                android:id="@+id/txtQualificacao"
+                android:id="@+id/txtLastNam"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
                 android:height="40dip"
                 android:gravity="center"
+                android:text="Segundo Nome"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:typeface="sans" />
+
+            <EditText
+                android:id="@+id/txtQualificacao"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:height="40dip"
+                android:drawableRight="@android:drawable/btn_star_big_on"
+                android:gravity="center"
+                android:inputType="text"
                 android:text="Qualificação"
                 android:textAlignment="center"
                 android:textColor="#ffffff"
                 android:textSize="14sp"
                 android:typeface="sans" />
+
+
 
         </LinearLayout>
     </LinearLayout>

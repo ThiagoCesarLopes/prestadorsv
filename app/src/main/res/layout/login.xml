@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#BEBEBE">
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -25,7 +24,7 @@
             android:layout_width="102dp"
             android:layout_height="89dp"
             android:layout_gravity="center"
-            android:src="@drawable/ic_housekeeper" />
+            android:src="@android:drawable/ic_secure" />
 
         <EditText
             android:id="@+id/et_username"
@@ -67,33 +66,38 @@
         android:layout_gravity="center"
         android:foregroundGravity="bottom"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingBottom="15dp">
 
 
         <Button
             android:id="@+id/btn_Login"
-            class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_above="@+id/linearLayout"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_weight="50"
-            android:backgroundTint="@color/colorPrimaryDark"
-            android:text="Login"
-            android:onClick="btn_Login"/>
+            android:background="@color/colorPrimaryDark"
+            android:drawableRight="@android:drawable/ic_partial_secure"
+            android:onClick="btn_Login"
+            android:text="Login" />
 
         <Button
             android:id="@+id/btn_CadastroNovo"
-            android:layout_width="50dp"
-            android:layout_height="60dp"
+              android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linearLayout"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_weight="50"
-            android:backgroundTint="@android:color/holo_red_light"
+            android:background="@android:color/holo_red_light"
             android:onClick="onclickCadastrar"
             android:text="Cadastrar Novo" />
-
+<ImageButton
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:src="@drawable/googleg_standard_color_18"/>
     </LinearLayout>
 
 

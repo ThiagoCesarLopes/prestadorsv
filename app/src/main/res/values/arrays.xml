@@ -11,6 +11,8 @@
     <string-array name="Cadastrolist">
         <item>@string/cadastrobacktype</item>
         <item>@string/cadastrobacktype2</item>
+        <item>@string/cadastrobacktype3</item>
+        <item>@string/cadastrobacktype4</item>
      </string-array>
 
     <string-array name="CadastroUrgenciaServicoCliente">
