@@ -1,6 +1,7 @@
 package br.com.appanunciobairro.bairroanuncio;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+
 
 public class ClienteActivity extends Activity {
 
@@ -33,13 +35,15 @@ public class ClienteActivity extends Activity {
         pbbar = (ProgressBar) findViewById(R.id.pbbar);
         pbbar.setVisibility(View.GONE);
 
-        Intent it = new Intent(this, ListaServicoActivity.class);
+        //Intent it = new Intent(this, ListaServicoActivity.class);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DoLogin  doLogin = new DoLogin();
                 doLogin.execute("");
+                Intent i = new Intent(ClienteActivity.this, ListaServicoActivity.class);
+                startActivity(i);
             }
         });
 
@@ -50,12 +54,10 @@ public class ClienteActivity extends Activity {
     {
         String z = "";
         Boolean isSuccess = false;
-
-
-
         String userid = edtuserid.getText().toString();
         String password = edtpass.getText().toString();
 
+        Context context;
 
         @Override
         protected void onPreExecute() {
@@ -71,6 +73,9 @@ public class ClienteActivity extends Activity {
             if(isSuccess) {
                 Toast.makeText(ClienteActivity.this,r,Toast.LENGTH_SHORT).show();
                 setContentView(R.layout.list_service_provider);
+                //context.startActivity(new Intent(context,ListaServicoActivity.class));
+                //this.context = context.getApplicationContext();
+
             }
 
         }
