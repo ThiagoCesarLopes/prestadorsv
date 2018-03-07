@@ -34,7 +34,7 @@
             android:paddingTop="3dp">
 
             <TextView
-                android:id="@+id/txtFirstNam"
+                android:id="@+id/tvfirstname"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
@@ -47,7 +47,7 @@
                 android:typeface="sans" />
 
             <TextView
-                android:id="@+id/txtLastNam"
+                android:id="@+id/tvlastname"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
@@ -60,7 +60,7 @@
                 android:typeface="sans" />
 
             <EditText
-                android:id="@+id/txtQualificacao"
+                android:id="@+id/tvQualificacao"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="7dp"
@@ -73,7 +73,6 @@
                 android:textColor="#ffffff"
                 android:textSize="14sp"
                 android:typeface="sans" />
-
 
 
         </LinearLayout>

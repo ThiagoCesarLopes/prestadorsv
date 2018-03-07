@@ -20,7 +20,7 @@ public class CustomAdapter extends BaseAdapter
 
     public CustomAdapter(Activity a, ArrayList d) {
         mActivity = a;
-        mList = d;
+       mList = d;
     }
 
     @Override
@@ -33,7 +33,7 @@ public class CustomAdapter extends BaseAdapter
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return position;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class CustomAdapter extends BaseAdapter
         ViewHolder holder;
         if (convertView == null)
         {
-            view = mInflater.inflate(R.layout.reportlayout,null);
+            view = mInflater.inflate(R.layout.list_service_provider,null);
             holder = new ViewHolder();
             holder.txtFirstName = view.findViewById(R.id.tvfirstname);
             holder.txtLastName = view.findViewById(R.id.tvlastname);

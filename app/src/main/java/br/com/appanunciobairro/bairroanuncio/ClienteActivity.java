@@ -41,8 +41,10 @@ public class ClienteActivity extends Activity {
             public void onClick(View v) {
                 DoLogin  doLogin = new DoLogin();
                 doLogin.execute("");
-                Intent i = new Intent(ClienteActivity.this, ListaServicoActivity.class);
-                startActivity(i);
+                Intent intent = new Intent(ClienteActivity.this, ListaServicoActivity.class);
+                Bundle local =new Bundle();
+                intent.putExtras(local);
+                startActivity(intent);
             }
         });
 

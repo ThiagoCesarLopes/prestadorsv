@@ -29,8 +29,8 @@
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-               >
+                android:layout_marginTop="5dp"
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:id="@+id/Principal"
@@ -221,7 +221,7 @@
                         android:layout_marginTop="20dp"
                         android:background="@color/common_google_signin_btn_text_dark_default"
                         android:text="@string/cadastro"
-                        android:textSize="10pt"/>
+                        android:textSize="10pt" />
 
                     <Spinner
                         android:id="@+id/SpinnerFeedbackType"
@@ -229,7 +229,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:entries="@array/Cadastrolist"
-                        android:prompt="@string/cadastrobacktype"/>
+                        android:prompt="@string/cadastrobacktype" />
 
                     <EditText
                         android:id="@+id/edNome"
@@ -264,14 +264,14 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/cadendereco"
-                        android:inputType="textPersonName"/>
+                        android:inputType="textPersonName" />
 
                     <EditText
                         android:id="@+id/EditTextEmail"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/feedbackemail"
-                        android:inputType="textEmailAddress"/>
+                        android:inputType="textEmailAddress" />
 
                     <EditText
                         android:id="@+id/EditTextFeedbackBody"
@@ -279,13 +279,13 @@
                         android:layout_height="wrap_content"
                         android:hint="@string/feedbackbody"
                         android:inputType="textMultiLine"
-                        android:lines="5"/>
+                        android:lines="5" />
 
                     <CheckBox
                         android:id="@+id/CheckBoxResponse"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/feedbackresponse"/>
+                        android:text="@string/feedbackresponse" />
 
                     <Button
                         android:id="@+id/btnconfirmar"

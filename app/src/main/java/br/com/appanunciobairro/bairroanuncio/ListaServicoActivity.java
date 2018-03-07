@@ -5,8 +5,13 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Map;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -14,20 +19,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Connection;
 
 public class ListaServicoActivity extends Activity {
 
     ConnectionClass connectionClass;
     private CustomAdapter adapter;
     ListView lstpro;
-    public ArrayList<ListModel> CustomListViewValueArr = new ArrayList<ListModel>();
-
+    public ArrayList<ListModel> customListViewValueArr = new ArrayList<ListModel>();
+    private boolean success =false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_service_provider);
-
+        connectionClass= new ConnectionClass();
+        customListViewValueArr=new ArrayList<ListModel>();
         lstpro = (ListView) findViewById(R.id.lstpro);
         FilList fill =new FilList();
         fill.execute("");
@@ -36,44 +43,66 @@ public class ListaServicoActivity extends Activity {
 
     public class FilList extends AsyncTask<String, String, String> {
         String z = "";
-        List<Map<String, String>> proList = new ArrayList<Map<String, String>>();
+        List<Map<String,String>>prolist=new ArrayList<Map<String, String>>();
 
         @Override
         protected void onPreExecute() {
-
+            super.onPreExecute();
         }
 
         @Override
         protected void onPostExecute(String s) {
-            Toast t = Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT);
-            t.show();
+            Toast.makeText(ListaServicoActivity.this, s, Toast.LENGTH_SHORT).show();
+            if (success=false){}
+            else{
+                try{
+                    adapter = new CustomAdapter(ListaServicoActivity.this,customListViewValueArr);
+                    lstpro.setAdapter(adapter);
+                }catch (Exception ex){
+
+                }
+            }
         }
 
         @Override
-        protected String doInBackground(String... Strings)
-        {
-            try
-            {
-                java.sql.Connection con = connectionClass.CONN();
-                if (con == null) {
-                    z = "ERRO in Connection";
-                } else {
-                  // final String fromdate = getIntent().getStringExtra("fromdate");
-                   // final String todate = getIntent().getStringExtra("todate");
-                    String query = "select * from TB_USER"; //where fromdate between '" + fromdate + "' and '" + todate + "'";
+        protected String doInBackground(String... strings) {
+            try{
+                Connection con = connectionClass.CONN();
+                if (con==null){
+                    success = false;
 
-                    PreparedStatement ps = con.prepareStatement(query);
-                    ResultSet rs = ps.executeQuery();
+                }else{
 
-                    while (rs.next()) {
-                        CustomListViewValueArr.add(new ListModel(rs.getString("FirstName"),rs.getString("LastName")));
+                    String query = "Select * from TB_USER ";
+                    Statement ps =con.createStatement();
+                    ResultSet rs = ps.executeQuery(query);
+                    if (rs!=null) {
+
+                        while (rs.next()) {
+                            try {
+
+                                customListViewValueArr.add(new ListModel(rs.getString("name"), rs.getString("last_name")));
+
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                        z = "Success";
+                        success = true;
+
+
+                    }else {
+                        z="DATA NOT FOUND";
+                        success=false;
                     }
-                    z = "Success";
                 }
-            }
-            catch(Exception ex)
-            {
-                z = ex.getMessage();
+            }catch (Exception e){
+                e.printStackTrace();
+                Writer writer=new StringWriter();
+                e.printStackTrace(new PrintWriter(writer));
+                z=writer.toString();
+                success=false;
+
             }
             return z;
         }
