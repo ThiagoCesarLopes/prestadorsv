@@ -18,28 +18,39 @@ public class CustomAdapter extends BaseAdapter
     private int i= 0;
 
 
-    public CustomAdapter(Activity a, ArrayList d) {
-        mActivity = a;
-       mList = d;
-    }
 
     @Override
     public int getCount()
     {
+
         if (mList.size() <= 0)
             return 1;
             return mList.size();
+        // TODO Auto-generated method stub
+       // return images.length;
     }
 
     @Override
-    public Object getItem(int position) {
-        return position;
+    public Object getItem(int arg0) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     @Override
-    public long getItemId(int position) {
-        return position;
+    public long getItemId(int arg0) {
+        // TODO Auto-generated method stub
+        return 0;
     }
+
+    //@Override
+    //public Object getItem(int position) {
+    //    return position;
+   // }
+
+    //@Override
+    //public long getItemId(int position) {
+    //    return position;
+    //}
 
     public static class ViewHolder
     {
@@ -48,16 +59,16 @@ public class CustomAdapter extends BaseAdapter
     }
 
     @Override
-    public View getView(int position,View convertView,ViewGroup parent)
+    public View getView(int position,View convertView,ViewGroup arg2)
     {
         View view = convertView;
         ViewHolder holder;
         if (convertView == null)
         {
-            view = mInflater.inflate(R.layout.list_service_provider,null);
+            view = mInflater.inflate(R.layout.custom_list,null);
             holder = new ViewHolder();
-            holder.txtFirstName = view.findViewById(R.id.tvfirstname);
-            holder.txtLastName = view.findViewById(R.id.tvlastname);
+            holder.txtFirstName = view.findViewById(R.id.textView1);
+            holder.txtLastName = view.findViewById(R.id.textView2);
             view.setTag(holder);
         }
         else
@@ -75,7 +86,7 @@ public class CustomAdapter extends BaseAdapter
                 tempValues=null;
                 tempValues=(ListModel) mList.get(position);
                 holder.txtFirstName.setText(tempValues.getName());
-                holder.txtLastName.setText(tempValues.getLast_name());
+                holder.txtLastName.setText(tempValues.getLastName());
             }
 
             }

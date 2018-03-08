@@ -2,20 +2,20 @@ package br.com.appanunciobairro.bairroanuncio;
 
 public class ListModel {
 
-    private String name ="";
-    private String last_name="";
+        public String img; //Image URL
+        public String name; //Name
+        public String last_name; //last_Name
 
-    public ListModel(String name, String last_name){
+     public ListModel(String name, String img, String last_name)
+        {
+            this.img = img;
+            this.name = name;
+            this.name = last_name;
+        }
 
-        this.name = name;
-        this.last_name = last_name;
-    }
+    public String getImg() {return img;}
 
-    public String getName() {
-        return this.name;
-    }
-
-    public String getLast_name() {
-        return last_name;
-    }
+    public String getName() { return name; }
+    public String getLastName() { return last_name;}
 }
+
