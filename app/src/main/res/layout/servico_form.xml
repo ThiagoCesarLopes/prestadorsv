@@ -11,18 +11,50 @@
         android:id="@+id/TextViewTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="@color/common_google_signin_btn_text_dark_default"
         android:text="Preencha o Serviço:"
         android:textSize="10pt"></TextView>
 
     <Spinner
+        android:id="@+id/SpinnerUF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:entries="@array/CadastrolistUF"
+        android:prompt="@string/CadastrolistUF"></Spinner>
+
+    <Spinner
+        android:id="@+id/SpinnerCidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:entries="@array/CadastrolistCidade"
+        android:prompt="@string/CadastrolistCidade"></Spinner>
+
+    <Spinner
+        android:id="@+id/SpinnerListaBairro"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:entries="@array/ListaBairro"
+        android:prompt="@string/ListaBairro"></Spinner>
+
+    <Spinner
+        android:id="@+id/SpinnerListaBairro2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:entries="@array/ListaBairro"
+        android:prompt="@string/ListaBairro"></Spinner>
+
+    <Spinner
         android:id="@+id/SpinnerFeedbackType"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:entries="@array/Cadastrolist"
-        android:prompt="@string/cadastrobacktype"></Spinner>
+        android:layout_marginTop="15dp"
+        android:entries="@array/CadastrolistUrgencia"
+        android:prompt="@string/CadastrolistUrgencia"></Spinner>
 
     <EditText
         android:id="@+id/edNome"
@@ -37,7 +69,7 @@
     <EditText
         android:id="@+id/EditTextFeedbackBody"
         android:layout_width="match_parent"
-        android:layout_height="252dp"
+        android:layout_height="160dp"
         android:layout_marginTop="15dp"
         android:hint="Informações Adicionais"
         android:inputType="textMultiLine"

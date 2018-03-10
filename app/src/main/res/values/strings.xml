@@ -3,20 +3,16 @@
     <string name="cadastro">Preencha o Formulario:</string>
     <string name="cadendereco">Endereço:</string>
     <string name="cadastrobacktype">Urgência</string>
-    <string name="cadastrobacktype2">Hoje:</string>
-    <string name="cadastrobacktype3">Essa Semana:</string>
-    <string name="cadastrobacktype4">Fim de Semana</string>
 
     <string name="garantia">Sim, Esta em garantia caso seja produto.</string>
     <string name="cadastroNovoCliente">Preencha o Cadastro </string>
     <string name="Servico">Descreva o Serviço: </string>
 
-
-    <string name="CadastroUrgenciaServico1">Selecione a Urgência:</string>
-    <string name="CadastroUrgenciaServico2">Hoje</string>
-    <string name="CadastroUrgenciaServico3">Essa Semana</string>
-    <string name="CadastroUrgenciaServico4">Fim de Semana</string>
-
+    <string name="CadastrolistUF">Selecione a UF:</string>
+    <string name="CadastrolistUF1">SP</string>ing>
+    <string name="CadastrolistCidade">Selecione a Bairro:</string>
+    <string name="CadastrolistCidade1">São Paulo</string>
+   <string name="CadastrolistUrgencia">Selecione a Urgência</string>
 
 <string
 name="chooser">Send message using:</string>

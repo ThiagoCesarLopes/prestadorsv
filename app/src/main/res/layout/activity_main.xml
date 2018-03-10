@@ -228,8 +228,8 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:entries="@array/Cadastrolist"
-                        android:prompt="@string/cadastrobacktype" />
+                        android:entries="@array/CadastrolistUrgencia"
+                        android:prompt="@string/CadastrolistUrgencia" />
 
                     <EditText
                         android:id="@+id/edNome"

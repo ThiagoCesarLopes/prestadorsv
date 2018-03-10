@@ -58,12 +58,12 @@
         android:inputType="textPersonName"></EditText>
 
     <Spinner
-        android:id="@+id/SpinnerFeedbackType"
+        android:id="@+id/SpinnerUrgencia"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:entries="@array/CadastroUrgenciaServicoCliente"
-        android:prompt="@string/CadastroUrgenciaServico1"></Spinner>
+        android:entries="@array/CadastrolistUrgencia"
+        android:prompt="@string/CadastrolistUrgencia"></Spinner>
 
     <EditText
         android:id="@+id/EditTextFeedbackBody"

@@ -10,10 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.RatingBar;
 
 import com.squareup.picasso.Picasso;
 import java.io.PrintWriter;
@@ -24,116 +24,136 @@ import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.util.List;
 import java.sql.Connection;
+import java.lang.Object;
 
 public class ListaServicoActivity extends AppCompatActivity {
 
-    private ArrayList<ListModel> itemArrayList; //List items Array
-    private MyAppAdapter myAppAdapter;//ARRAY Adapter
-    private ListView lstpro;
-    private boolean success = false;
-    private ConnectionClass connectionClass;
 
+    private ArrayList<classListItems> itemArrayList;  //List items Array
+    private MyAppAdapter myAppAdapter; //Array Adapter
+    private ListView listView; // Listview
+    private boolean success = false; // boolean
+    private ConnectionClass connectionClass; //Connection Class Variable
+
+    private RatingBar rb;
+    private TextView score;
 
     @Override
-        protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_service_provider);
 
-        lstpro = (ListView) findViewById(R.id.lstpro);//Listview declaration
-        connectionClass= new ConnectionClass();//conexao inicializada
+        rb=(RatingBar) findViewById(R.id.ratingBar); //RatingBar Declaration
+        score=(TextView) findViewById(R.id.score);//Valor do RatingBar -score
+        listView = (ListView) findViewById(R.id.listView); //Listview Declaration
+        connectionClass = new ConnectionClass(); // Connection Class Initialization
+        itemArrayList = new ArrayList<classListItems>(); // Arraylist Initialization
 
-        ArrayList<ListModel> itemArrayList;//Array inicializado
-
-        //chamada Async Task
+        // Calling Async Task
         SyncData orderData = new SyncData();
         orderData.execute("");
-
-
     }
 
-        public class SyncData extends AsyncTask<String, String, String> {
-        String z = "Internet/DB_Credentials/Windows_Firewall_TurnOn Error, See Android Monitor in the Bottom For Details";
+
+
+    // Async Task has three overrided methods,
+    private class SyncData extends AsyncTask<String, String, String>
+    {
+        String msg = "Internet/DB_Credentials/Windows_FireWall_TurnOn Error, See Android Monitor in the bottom For details!";
         ProgressDialog progress;
 
         @Override
-        protected void onPreExecute() {
-           progress = ProgressDialog.show(ListaServicoActivity.this,"Sincronizando","Lista Carregando! Por Favor Aguarde...",true);
+        protected void onPreExecute() //Starts the progress dailog
+        {
+            progress = ProgressDialog.show(ListaServicoActivity.this, "Carregando",
+                    "Lista de Prestadores de Serviço!...", true);
         }
+
         @Override
-        protected String doInBackground(String... strings) {
-            try{
-                Connection con = connectionClass.CONN();//Conection Object
-                if (con==null){
+        protected String doInBackground(String... strings)  // Connect to the database, write query and add items to array list
+        {
+            try
+            {
+                Connection conn = connectionClass.CONN(); //Connection Object
+                if (conn == null)
+                {
                     success = false;
-
-                }else{
-
-                    String query = "Select name,last_nanme,url from TB_USER ";
-                    Statement ps =con.createStatement();
-                    ResultSet rs = ps.executeQuery(query);
-                    if (rs!=null)// caso nao seja nulo add
+                }
+                else {
+                    // Change below query according to your own database.
+                    String query = "SELECT name,last_name,url_picture FROM TB_USER";
+                    Statement stmt = conn.createStatement();
+                    ResultSet rs = stmt.executeQuery(query);
+                    if (rs != null) // if resultset not null, I add items to itemArraylist using class created
                     {
-                        while (rs.next()) {
+                        while (rs.next())
+                        {
                             try {
-
-                                itemArrayList.add(new ListModel(rs.getString("name"), rs.getString("last_name"),rs.getString("url")));
-
+                                itemArrayList.add(new classListItems(rs.getString("name"), rs.getString("last_name"),rs.getString("url_picture")));
                             } catch (Exception ex) {
                                 ex.printStackTrace();
                             }
                         }
-                        z = "Success";
+                        msg = "Found";
                         success = true;
-
-
-                    }else {
-                        z="DATA NOT FOUND";
-                        success=false;
+                    } else {
+                        msg = "No Data found!";
+                        success = false;
                     }
                 }
-            }catch (Exception e){
+            } catch (Exception e)
+            {
                 e.printStackTrace();
-                Writer writer=new StringWriter();
+                Writer writer = new StringWriter();
                 e.printStackTrace(new PrintWriter(writer));
-                z=writer.toString();
-                success=false;
-
+                msg = writer.toString();
+                success = false;
             }
-            return z;
+            return msg;
         }
+
         @Override
-        protected void onPostExecute(String s) {
-            Toast.makeText(ListaServicoActivity.this, s, Toast.LENGTH_SHORT).show();
-            if (success=false){}
-            else{
-                try{
-                    myAppAdapter = new MyAppAdapter(itemArrayList,ListaServicoActivity.this);
-                    lstpro.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-                    lstpro.setAdapter(myAppAdapter);
-                }catch (Exception ex){
+        protected void onPostExecute(String msg) // disimissing progress dialoge, showing error and setting up my listview
+        {
+            progress.dismiss();
+            Toast.makeText(ListaServicoActivity.this, msg + "", Toast.LENGTH_LONG).show();
+            if (success == false)
+            {
+            }
+            else {
+                try {
+                    myAppAdapter = new MyAppAdapter(itemArrayList, ListaServicoActivity.this);
+                    listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+                    listView.setAdapter(myAppAdapter);
+                } catch (Exception ex)
+                {
 
                 }
+
             }
         }
     }
 
-        public class MyAppAdapter extends BaseAdapter {
-        public class ViewHolder {
-            TextView txtFirstName;
-            TextView txtLastName;
+    public class MyAppAdapter extends BaseAdapter         //has a class viewholder which holds
+    {
+        public class ViewHolder
+        {
+            TextView textName;
+            TextView textLastName;
             ImageView imageView;
         }
 
-        List<String> parkingList;
-        public Context context;
-        ArrayList<String> arraylist;
+        public List<classListItems> parkingList;
 
-        private MyAppAdapter(List<String> apps,Context context) {
+        public Context context;
+        ArrayList<classListItems> arraylist;
+
+        private MyAppAdapter(List<classListItems> apps,Context context)
+        {
             this.parkingList = apps;
             this.context = context;
-            arraylist = new ArrayList<String>();
+            arraylist = new ArrayList<classListItems>();
             arraylist.addAll(parkingList);
-
         }
 
         @Override
@@ -143,45 +163,43 @@ public class ListaServicoActivity extends AppCompatActivity {
 
         @Override
         public Object getItem(int position) {
-            // TODO Auto-generated method stub
             return position;
         }
 
         @Override
         public long getItemId(int position) {
-            // TODO Auto-generated method stub
             return position;
         }
 
-
         @Override
-        public View getView(final int position,View convertView,ViewGroup parent) // inflating the layou and initialinz widgets
+        public View getView(final int position, View convertView, ViewGroup parent) // inflating the layout and initializing widgets
         {
-            View view = convertView;
-            ViewHolder viewHolder = null;
 
-            if (convertView == null) {
-                LayoutInflater Inflater = getLayoutInflater();
-                convertView = Inflater.inflate(R.layout.custom_list,null);
-
+            View rowView = convertView;
+            ViewHolder viewHolder= null;
+            if (rowView == null)
+            {
+                LayoutInflater inflater = getLayoutInflater();
+                rowView = inflater.inflate(R.layout.custom_list, parent, false);
                 viewHolder = new ViewHolder();
-                viewHolder.txtFirstName = view.findViewById(R.id.textView1);
-                viewHolder.txtLastName = view.findViewById(R.id.textView2);
-                viewHolder.imageView = view.findViewById(R.id.imageView);
-
-                view.setTag(viewHolder);
-            } else {
+                viewHolder.textName = (TextView) rowView.findViewById(R.id.textName);
+                viewHolder.textLastName = (TextView) rowView.findViewById(R.id.textLastName);
+                viewHolder.imageView = (ImageView) rowView.findViewById(R.id.imageView);
+                rowView.setTag(viewHolder);
+            }
+            else
+            {
                 viewHolder = (ViewHolder) convertView.getTag();
             }
+            // here setting up names and images
 
-            viewHolder.txtFirstName.setText(parkingList.getClass().getName()+"");
-            viewHolder.txtLastName.setText(parkingList.getClass().getLastName()+"");
-            Picasso.with(context).load("http//"+parkingList.getClass().getImg()).into(viewHolder.imageView);
+            viewHolder.textName.setText(parkingList.get(position).getName()+"");
+            viewHolder.textLastName.setText(parkingList.get(position).getLastName()+"");
+            Picasso.with(context).load("http://"+parkingList.get(position).getImg()).into(viewHolder.imageView);
 
-            return convertView;
+            return rowView;
         }
-
     }
-}
 
+}
 

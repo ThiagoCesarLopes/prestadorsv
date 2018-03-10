@@ -8,18 +8,18 @@
         <item>@string/feedbacktype4</item>
     </string-array>
 
-    <string-array name="Cadastrolist">
-        <item>@string/cadastrobacktype</item>
-        <item>@string/cadastrobacktype2</item>
-        <item>@string/cadastrobacktype3</item>
-        <item>@string/cadastrobacktype4</item>
-     </string-array>
+    <string-array name="CadastrolistUrgencia">
+        <item>@string/CadastrolistUrgencia</item>
 
-    <string-array name="CadastroUrgenciaServicoCliente">
-        <item>@string/CadastroUrgenciaServico1</item>
-        <item>@string/CadastroUrgenciaServico2</item>
-        <item>@string/CadastroUrgenciaServico3</item>
-        <item>@string/CadastroUrgenciaServico4</item>
+    </string-array>
+
+    <string-array name="CadastrolistUF">
+        <item>@string/CadastrolistUF</item>
+        <item>@string/CadastrolistUF</item>
+    </string-array>
+    <string-array name="CadastrolistCidade">
+        <item>@string/CadastrolistCidade</item>
+        <item>@string/CadastrolistCidade</item>
     </string-array>
 
 

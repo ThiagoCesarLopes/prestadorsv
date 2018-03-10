@@ -1,0 +1,75 @@
+
+    public CustomAdapter(Activity a, ArrayList d) {
+        mActivity = a;
+        mList = d;
+    }
+
+
+
+    public class FilList extends AsyncTask<String, String, String> {
+        String z = "";
+        List<Map<String,String>>prolist=new ArrayList<Map<String, String>>();
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            Toast.makeText(ListaServicoActivity.this, s, Toast.LENGTH_SHORT).show();
+            if (success=false){}
+            else{
+                try{
+                    //customadapter adapter = new CustomAdapter(ListaServicoActivity.this,customListViewValueArr);
+                    adapter = new CustomAdapter();
+                    lstpro.setAdapter(adapter);
+                }catch (Exception ex){
+
+                }
+            }
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            try{
+                Connection con = connectionClass.CONN();
+                if (con==null){
+                    success = false;
+
+                }else{
+
+                    String query = "Select * from TB_USER ";
+                    Statement ps =con.createStatement();
+                    ResultSet rs = ps.executeQuery(query);
+                    if (rs!=null) {
+
+                        while (rs.next()) {
+                            try {
+
+                                customListViewValueArr.add(new ListModel(rs.getString("name"), rs.getString("last_name")));
+
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                            }
+                        }
+                        z = "Success";
+                        success = true;
+
+
+                    }else {
+                        z="DATA NOT FOUND";
+                        success=false;
+                    }
+                }
+            }catch (Exception e){
+                e.printStackTrace();
+                Writer writer=new StringWriter();
+                e.printStackTrace(new PrintWriter(writer));
+                z=writer.toString();
+                success=false;
+
+            }
+            return z;
+        }
+    }
