@@ -62,22 +62,7 @@ public class MainActivity extends AppCompatActivity {
         pbbar = (ProgressBar) findViewById(R.id.pbbar);
         //pbbar.setVisibility(View.GONE);
 
-        //Setting information Server
-        ip = "192.168.43.109:1433";
-        db = "DB_PrestadorServico";
-        un = "sa";
-        pass = "tlopes13";
-
-        //btnlogin.setOnClickListener(new View.OnClickListener() {
-        //     @Override
-        //    public void onClick(View v) {
-        //       DoLogin  doLogin = new DoLogin();
-        //        doLogin.execute("");
-
-        //     }
-        //  });
-
-        // aqui inicia os tab pagina home
+             // aqui inicia os tab pagina home
         TabHost host;
         host = findViewById(R.id.tabHost);
         host.setup();

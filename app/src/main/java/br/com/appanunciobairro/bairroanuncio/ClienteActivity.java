@@ -39,12 +39,14 @@ public class ClienteActivity extends Activity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DoLogin  doLogin = new DoLogin();
-                doLogin.execute("");
-                Intent intent = new Intent(ClienteActivity.this, ListaServicoActivity.class);
-                Bundle local =new Bundle();
-                intent.putExtras(local);
-                startActivity(intent);
+               // DoLogin doLogin = new DoLogin();
+                //
+               // Intent intent = new Intent(ClienteActivity.this, ListaServicoActivity.class);
+               // Bundle local =new Bundle();
+               // intent.putExtras(local);
+               // startActivity(intent);
+
+
             }
         });
 

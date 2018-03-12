@@ -9,12 +9,12 @@ import java.sql.SQLException;
 
 
 public class ConnectionClass {
-    String ip = "192.168.43.109:1433";
+    String ip = "192.168.43.157:1433";
    //String ip = "localhost";
     String classs = "net.sourceforge.jtds.jdbc.Driver";
     String db = "DB_PrestadorServico";
     String un = "sa";
-    String password = "tlopes13";
+    String password = "H1dr0g3n!0";
 
 
     @SuppressLint("NewApi")

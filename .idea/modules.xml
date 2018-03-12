@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/jtds-1.2.7/jtds-1.2.7.iml" filepath="$PROJECT_DIR$/jtds-1.2.7/jtds-1.2.7.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib2/lib2.iml" filepath="$PROJECT_DIR$/lib2/lib2.iml" />
+      <module fileurl="file://C:\git\prestadorsv\lib2\lib2.iml" filepath="C:\git\prestadorsv\lib2\lib2.iml" />
       <module fileurl="file://$PROJECT_DIR$/library-1.0.18/library-1.0.18.iml" filepath="$PROJECT_DIR$/library-1.0.18/library-1.0.18.iml" />
       <module fileurl="file://$PROJECT_DIR$/prestadorsv.iml" filepath="$PROJECT_DIR$/prestadorsv.iml" />
     </modules>

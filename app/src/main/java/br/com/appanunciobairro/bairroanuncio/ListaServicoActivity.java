@@ -112,6 +112,11 @@ public class ListaServicoActivity extends AppCompatActivity {
             return msg;
         }
 
+
+
+
+
+
         @Override
         protected void onPostExecute(String msg) // disimissing progress dialoge, showing error and setting up my listview
         {
