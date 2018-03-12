@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
@@ -28,7 +30,6 @@
             android:layout_alignParentStart="true"
             android:layout_marginRight="5dp"
             app:srcCompat="@mipmap/ic_launcher" />
-
         <TextView
             android:id="@+id/textName"
             android:layout_width="wrap_content"
@@ -42,8 +43,7 @@
             android:maxLength="30"
             android:text="Nome"
             android:textColor="@color/colorPrimary"
-            android:textSize="14sp" />
-
+            android:textSize="16sp" />
         <TextView
             android:id="@+id/textLastName"
             android:layout_width="wrap_content"
@@ -58,9 +58,8 @@
             android:text="Sobrenome"
             android:textColor="@color/colorPrimary"
             android:textSize="14sp" />
-
         <TextView
-            android:id="@+id/textBairro"
+            android:id="@+id/textBairrolbl"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignBottom="@+id/imageView"
@@ -71,10 +70,34 @@
             android:layout_toRightOf="@+id/imageView"
             android:gravity="bottom"
             android:maxLength="30"
+            android:text="Bairro:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/textBairro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textName"
+            android:layout_marginStart="50dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:gravity="bottom"
+            android:maxLength="30"
             android:text="Bairro"
             android:textColor="@color/colorPrimary"
             android:textSize="14sp" />
 
+        <TextView
+            android:id="@+id/scorelbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textName"
+            android:layout_toEndOf="@+id/imageView"
+            android:gravity="center|right"
+            android:maxLength="30"
+            android:paddingRight="120dp"
+            android:text="Score:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp" />
 
         <CheckBox
             android:id="@+id/chkPrestador"
@@ -86,40 +109,38 @@
             android:layout_marginTop="12dp"
             android:gravity="bottom|right|center" />
 
-        <RatingBar
-            android:id="@+id/ratingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/chkPrestador"
-            android:layout_marginTop="10dp"
-            android:gravity="bottom|left|center"
-            android:paddingLeft="10dp"
-            android:progressTint="@color/colorPrimary"
-            android:scaleX="0.5"
-            android:scaleY="0.5" />
-
-        <TextView
-            android:id="@+id/score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/chkPrestador"
-            android:gravity="center|right"
-            android:maxLength="30"
-            android:paddingRight="130dp"
-            android:text="Score:"
-            android:textColor="@color/colorPrimary"
-            android:textSize="15sp" />
-
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:background="@color/colorPrimary"
-        android:text="Button" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textTituloitulo"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="58dp"
+        android:gravity="bottom|left|center"
+        android:paddingLeft="10dp"
+        android:progressTint="@color/colorPrimary"
+        android:scaleX="0.5"
+        android:scaleY="0.5" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ac"
+        android:layout_alignStart="@+id/ratingBar"
+        android:layout_marginBottom="9dp"
+        android:layout_marginStart="13dp"
+        android:gravity="left"
+        android:maxLength="30"
+        android:paddingRight="120dp"
+        android:text="Score:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp" />
+
+
 </RelativeLayout>
+
+

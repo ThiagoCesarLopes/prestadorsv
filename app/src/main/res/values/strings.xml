@@ -12,7 +12,11 @@
     <string name="CadastrolistUF1">SP</string>ing>
     <string name="CadastrolistCidade">Selecione a Bairro:</string>
     <string name="CadastrolistCidade1">São Paulo</string>
-   <string name="CadastrolistUrgencia">Selecione a Urgência</string>
+
+    <string name="CadastrolistUrgencia">Selecione a Urgência</string>
+    <string name="CadastrolistUrgencia1">Alta</string>
+    <string name="CadastrolistUrgencia2">Média</string>
+    <string name="CadastrolistUrgencia3">Baixa</string>
 
 <string
 name="chooser">Send message using:</string>

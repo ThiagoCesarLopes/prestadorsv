@@ -9,7 +9,10 @@
     </string-array>
 
     <string-array name="CadastrolistUrgencia">
-        <item>@string/CadastrolistUrgencia</item>
+        <item>@string/CadastrolistUrgencia1</item>
+        <item>@string/CadastrolistUrgencia2</item>
+        <item>@string/CadastrolistUrgencia3</item>
+
 
     </string-array>
 

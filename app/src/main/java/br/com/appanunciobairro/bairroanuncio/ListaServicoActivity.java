@@ -81,7 +81,8 @@ public class ListaServicoActivity extends AppCompatActivity {
                 }
                 else {
                     // Change below query according to your own database.
-                    String query = "SELECT name,last_name,url_picture FROM TB_USER";
+                    //String query = "SELECT name,last_name,url_picture FROM TB_USER";
+                    String query = "SELECT us.name ,us.last_name,us.url_picture ,us.score, ne.desc_bairro  from TB_USER us INNER JOIN NEIGHBORHOOD NE on ne.bairro_id = us.bairro_id where us.bairro_id = 2";
                     Statement stmt = conn.createStatement();
                     ResultSet rs = stmt.executeQuery(query);
                     if (rs != null) // if resultset not null, I add items to itemArraylist using class created
@@ -89,7 +90,7 @@ public class ListaServicoActivity extends AppCompatActivity {
                         while (rs.next())
                         {
                             try {
-                                itemArrayList.add(new classListItems(rs.getString("name"), rs.getString("last_name"),rs.getString("url_picture")));
+                                itemArrayList.add(new classListItems(rs.getString("name"), rs.getString("last_name"),rs.getString("url_picture"),rs.getInt("score"),rs.getString("desc_bairro")));
                             } catch (Exception ex) {
                                 ex.printStackTrace();
                             }
@@ -140,6 +141,9 @@ public class ListaServicoActivity extends AppCompatActivity {
         {
             TextView textName;
             TextView textLastName;
+            TextView textBairro;
+            RatingBar ratingBar;
+            TextView score;
             ImageView imageView;
         }
 
@@ -184,6 +188,9 @@ public class ListaServicoActivity extends AppCompatActivity {
                 viewHolder = new ViewHolder();
                 viewHolder.textName = (TextView) rowView.findViewById(R.id.textName);
                 viewHolder.textLastName = (TextView) rowView.findViewById(R.id.textLastName);
+                viewHolder.textBairro = (TextView) rowView.findViewById(R.id.textBairro);
+                viewHolder.ratingBar = (RatingBar) rowView.findViewById(R.id.ratingBar);
+                viewHolder.score = (TextView) rowView.findViewById(R.id.score);
                 viewHolder.imageView = (ImageView) rowView.findViewById(R.id.imageView);
                 rowView.setTag(viewHolder);
             }
@@ -195,6 +202,11 @@ public class ListaServicoActivity extends AppCompatActivity {
 
             viewHolder.textName.setText(parkingList.get(position).getName()+"");
             viewHolder.textLastName.setText(parkingList.get(position).getLastName()+"");
+            viewHolder.textBairro.setText(parkingList.get(position).getDescBairro()+"");
+            int value = parkingList.get(position).getScore();
+            viewHolder.ratingBar.setEnabled(false);
+            viewHolder.ratingBar.setRating(value);
+            viewHolder.score.setText(parkingList.get(position).getScore()+"");
             Picasso.with(context).load("http://"+parkingList.get(position).getImg()).into(viewHolder.imageView);
 
             return rowView;
