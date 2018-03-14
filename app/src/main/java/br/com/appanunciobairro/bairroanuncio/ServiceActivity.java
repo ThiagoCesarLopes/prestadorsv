@@ -16,7 +16,7 @@ public class ServiceActivity  extends Activity
         setContentView(R.layout.servico_form);
     }
     public void  OnclickCadastrarServico (View v){
-        startActivityForResult(new Intent(this,ClienteActivity.class),1);
+        startActivityForResult(new Intent(this,LoginActivity.class),1);
     }
 }
 

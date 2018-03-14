@@ -8,12 +8,7 @@
     <string name="cadastroNovoCliente">Preencha o Cadastro </string>
     <string name="Servico">Descreva o Serviço: </string>
 
-    <string name="CadastrolistUF">Selecione a UF:</string>
-    <string name="CadastrolistUF1">SP</string>ing>
-    <string name="CadastrolistCidade">Selecione a Bairro:</string>
-    <string name="CadastrolistCidade1">São Paulo</string>
-
-    <string name="CadastrolistUrgencia">Selecione a Urgência</string>
+     <string name="CadastrolistUrgencia">Selecione a Urgência</string>
     <string name="CadastrolistUrgencia1">Alta</string>
     <string name="CadastrolistUrgencia2">Média</string>
     <string name="CadastrolistUrgencia3">Baixa</string>
@@ -84,10 +79,16 @@ name="feedbackmessagebody_responseno">Does not require a response</string>
 <string
 name="feedbackmessagesubject_format">Application Feedback (%1$s)</string>
 
+    <string name="CadastrolistUF">UF:</string>
+    <string name="CadastrolistUF1">SP</string>ing>
+
+    <string name="CadastrolistCidade">Cidades:</string>
+    <string name="CadastrolistCidade1">São Paulo</string>
+
     <!--Inicio  Lista de Bairros -->
     <string name="SpinnerListaBairro">ListaBairro</string>
     <!--A -->
-    <string name="ListaBairro">Selecione o Bairro para o Serviço:</string>
+    <string name="ListaBairro"> Bairro:</string>
     <string name="ListaBairro1">A</string>
     <string name="ListaBairro2">Aclimação</string>
     <string name="ListaBairro3">Água Branca</string>

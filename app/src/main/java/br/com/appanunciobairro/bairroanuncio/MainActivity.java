@@ -1,41 +1,16 @@
 package br.com.appanunciobairro.bairroanuncio;
-import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.Environment;
-import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.SimpleAdapter;
 import android.widget.TabHost;
 import android.widget.Toast;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
     TabHost tabHost;
@@ -83,18 +58,18 @@ public class MainActivity extends AppCompatActivity {
         host.setup();
 
         //Tab Principal
-        TabHost.TabSpec spec = host.newTabSpec("Principal");
-        spec.setContent(R.id.Principal);
-        spec.setIndicator("Principal");
+        TabHost.TabSpec spec = host.newTabSpec("HOME");
+        spec.setContent(R.id.HOME);
+        spec.setIndicator("HOME");
         host.addTab(spec);
 
         //Tab Hospital
-        spec = host.newTabSpec("Cadastrar");
-        spec.setContent(R.id.Cadastrar);
-        spec.setIndicator("Cadastrar");
+        spec = host.newTabSpec("Prestador");
+        spec.setContent(R.id.Prestador);
+        spec.setIndicator("Prestador");
         host.addTab(spec);
 
-        //Tab Contato
+            //Tab Contato
         spec = host.newTabSpec("Contato");
         spec.setContent(R.id.Contato);
         spec.setIndicator("Contato");
@@ -140,8 +115,14 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(new Intent(this,ServiceActivity.class),1);
     }
 
-    public void onclickCadastroNovo(View v){
-        startActivityForResult(new Intent(this,ClienteActivity.class),1);
+    public void btn_Login(View v){
+        startActivityForResult(new Intent(this,LoginActivity.class),1);
+       // setContentView(R.layout.new_user);
+    }
+
+    public void onclickCadastrar(View v){
+        //startActivityForResult(new Intent(this,LoginActivity.class),1);
+        setContentView(R.layout.new_user);
     }
 
   }

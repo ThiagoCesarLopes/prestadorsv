@@ -16,7 +16,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 
-public class ClienteActivity extends Activity {
+public class LoginActivity extends Activity {
 
     ConnectionClass connectionClass;
     EditText edtuserid,edtpass;
@@ -41,7 +41,7 @@ public class ClienteActivity extends Activity {
             public void onClick(View v) {
                 DoLogin  doLogin = new DoLogin();
                 doLogin.execute("");
-                Intent intent = new Intent(ClienteActivity.this, ListaServicoActivity.class);
+                Intent intent = new Intent(LoginActivity.this, ListaServicoActivity.class);
                 Bundle local =new Bundle();
                 intent.putExtras(local);
                 startActivity(intent);
@@ -69,10 +69,10 @@ public class ClienteActivity extends Activity {
         protected void onPostExecute(String r) {
 
             pbbar.setVisibility(View.GONE);
-            Toast.makeText(ClienteActivity.this,r,Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this,r,Toast.LENGTH_SHORT).show();
 
             if(isSuccess) {
-                Toast.makeText(ClienteActivity.this,r,Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,r,Toast.LENGTH_SHORT).show();
                // setContentView(R.layout.list_service_provider);
                 //context.startActivity(new Intent(context,ListaServicoActivity.class));
                 //this.context = context.getApplicationContext();
@@ -145,6 +145,7 @@ public class ClienteActivity extends Activity {
 
      public void onclickCadastrar (View v)
     {
-        startActivityForResult(new Intent(this,CadastroNovo.class),1);
+       // startActivityForResult(new Intent(this,RegisterNew.class),1);
+        setContentView(R.layout.new_user);
     }
 }

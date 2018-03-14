@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 
 public class ConnectionClass {
-    String ip = "192.168.43.109:1433";
+    String ip = "192.168.0.24:1433";
    //String ip = "localhost";
     String classs = "net.sourceforge.jtds.jdbc.Driver";
     String db = "DB_PrestadorServico";

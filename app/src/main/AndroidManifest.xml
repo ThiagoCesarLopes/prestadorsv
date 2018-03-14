@@ -21,9 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClienteActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
         <activity android:name=".FormActivity"></activity>
-        <activity android:name=".CadastroNovo"></activity>
+        <activity android:name=".RegisterNew"></activity>
         <activity android:name=".ListaServicoActivity"></activity>
         <activity android:name=".ServiceActivity"></activity>
     </application>

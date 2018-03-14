@@ -4,15 +4,53 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_above="@id/button">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|right" />
 
     <TextView
         android:id="@+id/textTituloitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:freezesText="false"
         android:text="Selecione os Prestadores:" />
 
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/textTituloitulo"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="50dp"
+        android:gravity="bottom|left|center"
+        android:paddingLeft="10dp"
+        android:progressTint="@color/colorPrimary"
+        android:stepSize="1.0"
+        android:scaleX="0.5"
+        android:scaleY="0.5" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ac"
+        android:layout_alignStart="@+id/ratingBar"
+        android:layout_marginBottom="9dp"
+        android:layout_marginStart="13dp"
+        android:gravity="left"
+        android:maxLength="30"
+        android:paddingRight="120dp"
+        android:text="value"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp" />
     <RelativeLayout
         android:id="@+id/ac"
         android:layout_width="match_parent"
@@ -30,6 +68,7 @@
             android:layout_alignParentStart="true"
             android:layout_marginRight="5dp"
             app:srcCompat="@mipmap/ic_launcher" />
+
         <TextView
             android:id="@+id/textName"
             android:layout_width="wrap_content"
@@ -43,7 +82,7 @@
             android:maxLength="30"
             android:text="Nome"
             android:textColor="@color/colorPrimary"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
         <TextView
             android:id="@+id/textLastName"
             android:layout_width="wrap_content"
@@ -85,7 +124,6 @@
             android:text="Bairro"
             android:textColor="@color/colorPrimary"
             android:textSize="14sp" />
-
         <TextView
             android:id="@+id/scorelbl"
             android:layout_width="wrap_content"
@@ -98,7 +136,6 @@
             android:text="Score:"
             android:textColor="@color/colorPrimary"
             android:textSize="15sp" />
-
         <CheckBox
             android:id="@+id/chkPrestador"
             android:layout_width="wrap_content"
@@ -111,36 +148,8 @@
 
     </RelativeLayout>
 
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/textTituloitulo"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="58dp"
-        android:gravity="bottom|left|center"
-        android:paddingLeft="10dp"
-        android:progressTint="@color/colorPrimary"
-        android:scaleX="0.5"
-        android:scaleY="0.5" />
 
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ac"
-        android:layout_alignStart="@+id/ratingBar"
-        android:layout_marginBottom="9dp"
-        android:layout_marginStart="13dp"
-        android:gravity="left"
-        android:maxLength="30"
-        android:paddingRight="120dp"
-        android:text="Score:"
-        android:textColor="@color/colorPrimary"
-        android:textSize="15sp" />
+  </RelativeLayout>
 
-
-</RelativeLayout>
 
 
