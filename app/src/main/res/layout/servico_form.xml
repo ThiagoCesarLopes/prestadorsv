@@ -41,14 +41,6 @@
         android:prompt="@string/ListaBairro"></Spinner>
 
     <Spinner
-        android:id="@+id/SpinnerListaBairro2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:entries="@array/ListaBairro"
-        android:prompt="@string/ListaBairro"></Spinner>
-
-    <Spinner
         android:id="@+id/SpinnerFeedbackType"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -73,7 +65,8 @@
         android:layout_marginTop="15dp"
         android:hint="Informações Adicionais"
         android:inputType="textMultiLine"
-        android:lines="5"></EditText>
+        android:lines="5">
+    </EditText>
 
     <Button
         android:id="@+id/btnconfirmar"

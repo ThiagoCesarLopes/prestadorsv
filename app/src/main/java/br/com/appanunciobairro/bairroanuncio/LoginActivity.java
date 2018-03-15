@@ -39,13 +39,15 @@ public class LoginActivity extends Activity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 DoLogin  doLogin = new DoLogin();
                 doLogin.execute("");
                 Intent intent = new Intent(LoginActivity.this, ListaServicoActivity.class);
                 Bundle local =new Bundle();
                 intent.putExtras(local);
                 startActivity(intent);
-            }
+
+             }
         });
 
         }
@@ -124,24 +126,7 @@ public class LoginActivity extends Activity {
 
     }
 
-   // Você precisa armazenar o status do usuário quando o aplicativo for fechado, para saber se ele estava logado ou não quando fechou
-    // o aplicativo.
-    // Isso pode ser feito de diversas formas, sendo a mais simples provavelmente o uso de SharePreferences:
-    //Create a object SharedPreferences from getSharedPreferences("name_file",MODE_PRIVATE) of Context
-   // private SharedPreferences pref;
-   // pref = getSharedPreferences("info", MODE_PRIVATE);
-    //Using putXXX - with XXX is type data you want to write like: putString, putInt...   from      Editor object
-   // Editor editor = pref.edit();
-//editor.putString("key5","value5");
-//finally, when you are done saving the values, call the commit() method.
-//editor.commit()
 
-    //Lendo:
-
-    //get SharedPreferences from getSharedPreferences("name_file", MODE_PRIVATE)
-    //SharedPreferences shared = getSharedPreferences("info",MODE_PRIVATE)
-    //Using getXXX- with XX is type date you wrote to file "name_file"
-    //String string_temp = shared.getString("key5");
 
      public void onclickCadastrar (View v)
     {

@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-     <TabHost
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scrowView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fillViewport="true"
+        android:gravity="top"
+        tools:context=".MainActivity" >
+        <TabHost
         android:id="@+id/tabHost"
         android:layout_width="385dp"
         android:layout_height="515dp"
@@ -51,7 +62,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_pintor"
-                            android:onClick="onclickIncluirPintor"
+                            android:onClick="onclickPintor"
                             android:text="Pintor" />
 
                         <Button
@@ -60,7 +71,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_manicure"
-                            android:onClick="onclickIncluirManicure"
+                            android:onClick="onclickManicure"
                             android:text="Manicure" />
 
                         <Button
@@ -69,6 +80,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_beauty"
+                            android:onClick="onclickCabeleleiro"
                             android:text="Cabeleleiros" />
 
                         <Button
@@ -77,6 +89,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_people"
+                            android:onClick="onclickEncanador"
                             android:text="Encanador" />
 
                         <Button
@@ -85,6 +98,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_pintor"
+                            android:onClick="onclickEletricista"
                             android:text="Eletricista" />
 
                         <Button
@@ -93,6 +107,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_pintor"
+                            android:onClick="onclickBaba"
                             android:text="Babá" />
                     </LinearLayout>
 
@@ -108,6 +123,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_costureira"
+                            android:onClick="onclickCostureira"
                             android:text="Costureiras" />
 
                         <Button
@@ -116,6 +132,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_veiculo"
+                            android:onClick="onclickChaveiro"
                             android:text="Chaveiros" />
 
                         <Button
@@ -124,6 +141,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_housekeeper"
+                            android:onClick="onclickDiarista"
                             android:text="Diaristas" />
 
                         <Button
@@ -132,6 +150,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_pedreiro"
+                            android:onClick="onclickPedreiro"
                             android:text="Pedreiros" />
 
                         <Button
@@ -140,6 +159,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_costureira"
+                            android:onClick="onclickMarcineiro"
                             android:text="Marcineiro" />
 
                         <Button
@@ -148,6 +168,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_pintor"
+                            android:onClick="onclickVidraceiro"
                             android:text="Vidraceiro" />
                     </LinearLayout>
 
@@ -163,6 +184,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_cooking"
+                            android:onClick="onclickCozinheiro"
                             android:text="Cozinheiro" />
 
                         <Button
@@ -171,6 +193,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_celular"
+                            android:onClick="onclickCelulare"
                             android:text="Celulares" />
 
                         <Button
@@ -179,6 +202,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_physiotherapy"
+                            android:onClick="onclickFisioterapeuta"
                             android:text="Fisioterapeuta" />
 
                         <Button
@@ -187,6 +211,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_woman_face"
+                            android:onClick="onclickEsteticista"
                             android:text="Esteticista" />
 
                         <Button
@@ -195,6 +220,7 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_barman"
+                            android:onClick="onclickBarman"
                             android:text="BarMan" />
 
                         <Button
@@ -203,10 +229,10 @@
                             android:layout_height="90dp"
                             android:background="#D3D3D3"
                             android:drawableTop="@drawable/ic_servico"
+                            android:onClick="onclickBorracheiro"
                             android:text="Borracheiro" />
                     </LinearLayout>
                 </LinearLayout>
-
                 <LinearLayout
                     android:id="@+id/Prestador"
                     android:layout_width="fill_parent"
@@ -318,41 +344,67 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-                        android:id="@+id/ScrollView01"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="30dp"
-                        android:scrollbars="vertical">
+                             <TextView
+                                android:id="@+id/TextViewTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorPrimary"
+                                android:layout_marginTop="40dp"
+                                android:text="Suporte ou Feedback?"
+                                android:textSize="10pt"></TextView>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:orientation="vertical">
 
-                            <TextView
+                            <EditText
+                                android:id="@+id/EditTextName"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="top"
-                                android:layout_marginBottom="30dp"
-                                android:background="@android:color/background_light"
-                                android:gravity="center_horizontal"
-                                android:text="@string/hello"
-                                android:textSize="24sp" />
+                                android:layout_marginTop="20dp"
+                                android:hint="@string/feedbackname"
+                                android:inputType="textPersonName"></EditText>
+
+                            <EditText
+                                android:id="@+id/EditTextEmail"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/feedbackemail"
+                                android:inputType="textEmailAddress"></EditText>
+
+                            <Spinner
+                                android:id="@+id/SpinnerFeedbackType"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:entries="@array/feedbacktypelist"
+                                android:prompt="@string/feedbacktype"></Spinner>
+
+                            <EditText
+                                android:id="@+id/EditTextFeedbackBody"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/feedbackbody"
+                                android:inputType="textMultiLine"
+                                android:lines="5"></EditText>
+
+                            <CheckBox
+                                android:id="@+id/CheckBoxResponse"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/feedbackresponse"></CheckBox>
 
                             <Button
-                                android:id="@+id/Button_Feedback"
-                                android:layout_width="fill_parent"
+                                android:id="@+id/ButtonSendFeedback"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:onClick="onclicklaunchForm"
-                                android:text="@string/buttontext_feedback"></Button>
+                                android:layout_marginTop="30dp"
+                                android:background="@color/colorPrimary"
+                                android:onClick="sendFeedback"
+                                android:text="@string/feedbackbutton"
+                                android:theme="@style/Base.Widget.AppCompat.ButtonBar.AlertDialog"></Button>
 
-                        </LinearLayout>
-                    </ScrollView>
+
                 </LinearLayout>
 
             </FrameLayout>
         </LinearLayout>
     </TabHost>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

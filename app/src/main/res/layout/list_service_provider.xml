@@ -13,11 +13,11 @@
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/Textvv"
         android:choiceMode="multipleChoice"
         android:divider="@null"
-        android:layout_above="@id/button">
-    </ListView>
+        android:layout_above="@id/button"
+        android:layout_centerHorizontal="true"
+       ></ListView>
 
 </ScrollView>

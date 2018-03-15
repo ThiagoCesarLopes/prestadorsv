@@ -37,30 +37,15 @@ public class MainActivity extends AppCompatActivity {
         pbbar = (ProgressBar) findViewById(R.id.pbbar);
         //pbbar.setVisibility(View.GONE);
 
-        //Setting information Server
-        ip = "192.168.43.109:1433";
-        db = "DB_PrestadorServico";
-        un = "sa";
-        pass = "tlopes13";
-
-        //btnlogin.setOnClickListener(new View.OnClickListener() {
-        //     @Override
-        //    public void onClick(View v) {
-        //       DoLogin  doLogin = new DoLogin();
-        //        doLogin.execute("");
-
-        //     }
-        //  });
-
-        // aqui inicia os tab pagina home
+             // aqui inicia os tab pagina home
         TabHost host;
         host = findViewById(R.id.tabHost);
         host.setup();
 
         //Tab Principal
-        TabHost.TabSpec spec = host.newTabSpec("HOME");
+        TabHost.TabSpec spec = host.newTabSpec("Home");
         spec.setContent(R.id.HOME);
-        spec.setIndicator("HOME");
+        spec.setIndicator("Home");
         host.addTab(spec);
 
         //Tab Hospital
@@ -107,13 +92,62 @@ public class MainActivity extends AppCompatActivity {
          startActivityForResult(new Intent(this,FormActivity.class),1);
     }
 
- 
-    public void onclickIncluirPintor(View v){
+    public void onclickPintor(View v){
             startActivityForResult(new Intent(this,ServiceActivity.class),1);
         }
-    public void onclickIncluirManicure(View v){
+    public void onclickManicure(View v){
         startActivityForResult(new Intent(this,ServiceActivity.class),1);
     }
+    public void onclickCabeleleiro(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickEncanador(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickEletricista(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void  onclickBaba(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickCostureira(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickChaveiro(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickDiarista(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickPedreiro(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickMarcineiro(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickVidraceiro(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickCozinheiro(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickCelulare(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickFisioterapeuta(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickEsteticista(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickBarman(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+    public void onclickBorracheiro(View v){
+        startActivityForResult(new Intent(this,ServiceActivity.class),1);
+    }
+
+
 
     public void btn_Login(View v){
         startActivityForResult(new Intent(this,LoginActivity.class),1);

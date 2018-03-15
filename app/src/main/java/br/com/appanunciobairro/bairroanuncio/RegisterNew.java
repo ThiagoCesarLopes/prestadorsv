@@ -1,102 +1,68 @@
 package br.com.appanunciobairro.bairroanuncio;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.*;
-import android.app.*;
+import android.widget.Button;
+import android.widget.EditText;
+import java.util.ArrayList;
+import java.util.List;
 
+public class RegisterNew extends AppCompatActivity {
 
-public class RegisterNew extends Activity {
+    private List<RegisterUserClass> lstPessoa = null;
+    private Integer posicao = -1;
+    private Integer posicaoFinal = -1;
 
-    RegisterUserClass pri, reg, ult, aux;
-    EditText ednome, edendereco, edtelefone;
-    Spinner edcidade;
-    int numreg, pos;
+    private Button btnConfirmar;
+
+    private EditText edtNome;
+    private EditText edtSobrenome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        numreg = 0;
-        pri = ult = null;
-        CarregaTelaCadastro();
-    }
+        setContentView(R.layout.new_user);
 
-    void CarregaTelaInicial() {
-        setContentView(R.layout.activity_main);
-      //  Button btnovo = (Button) findViewById(R.id.btnovo);
-      //  Button btcadastrados = (Button) findViewById(R.id.btcadastrados);
+        // Atravez do findViewById podemos pegar os campos que estão na tela
+        btnConfirmar = (Button) findViewById(R.id.btnConfirmar);
+        edtNome = (EditText) findViewById(R.id.editnome);
+        edtSobrenome = (EditText) findViewById(R.id.editsobrenome);
 
-         }
-
-    void CarregaTelaCadastro() {
-
-        setContentView(R.layout.activity_main);
-
-        Button btconfirma = (Button) findViewById(R.id.btconfirma);
-        Button btcancelar = (Button) findViewById(R.id.btcancelar);
-
-        btconfirma.setOnClickListener(new View.OnClickListener() {
-
+        // Quando o botao for clicado, executará esta acão
+        btnConfirmar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View arg0) {
-                try {
-                    reg = new RegisterUserClass();
-
-                    ednome = (EditText) findViewById(R.id.ednome);
-                    edendereco = (EditText) findViewById(R.id.edendereco);
-                    edcidade = (Spinner) findViewById(R.id.SpinnerCidade);
-                    edtelefone = (EditText) findViewById(R.id.edtelefone);
-
-                    reg.nome = ednome.getText().toString();
-                    reg.endereco = edendereco.getText().toString();
-                    //reg.cidade = edcidade.getDropDownHorizontalOffset().toInt();
-                    reg.telefone = edtelefone.getText().toString();
-
-                    if (pri == null)
-                        pri = reg;
-
-                    reg.Ant = ult;
-                    if (ult == null)
-                        ult = reg;
-                    else {
-                        ult.Prox = reg;
-                        ult = reg;
-                    }
-
-                    numreg++;
-                    showMessage("Cadastrado com Exito", RegisterNew.this);
-                    //Login();
-
-                } catch (Exception e) {
-                    showMessage("Erro Ao efetivar o cadastro", RegisterNew.this);
-
+            public void onClick(View v) {
+                if (lstPessoa == null) {
+                    lstPessoa = new ArrayList<RegisterUserClass>();
                 }
+
+                RegisterUserClass pessoa = new RegisterUserClass();
+                pessoa.setNome(edtNome.getText().toString());
+                pessoa.setSobreNome(edtSobrenome.getText().toString());
+
+                lstPessoa.add(pessoa);
+                posicaoFinal++;
+
+                apresentaMensagem("Pessoa cadastrada com sucesso.", "Informação");
+                limpaCampos();
             }
         });
-
-        btcancelar.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View arg0) {
-                CarregaTelaInicial();
-            }
-        });
-
     }
 
-
-
-    public void showMessage(String Caption, Activity activity) {
-        AlertDialog.Builder dialogo = new AlertDialog.Builder(activity);
-        dialogo.setTitle("Atencao");
-        dialogo.setMessage(Caption);
-        dialogo.setNeutralButton("OK", null);
-        dialogo.show();
+    private void apresentaMensagem(String msg, String titulo) {
+        AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+        dlgAlert.setMessage(msg);
+        dlgAlert.setTitle(titulo);
+        dlgAlert.setPositiveButton("OK", null);
+        dlgAlert.setCancelable(true);
+        dlgAlert.create().show();
     }
 
- //   public void onClickConfirmarClienteCadastro (View v)
-   // {
-//       startActivityForResult(new Intent(this,ListaServicoActivity.class),1);
-        //teste
- //   }
-
+    private void limpaCampos(){
+        edtNome.setText("");
+        edtSobrenome.setText("");
+    }
 }

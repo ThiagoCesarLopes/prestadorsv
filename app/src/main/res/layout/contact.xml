@@ -5,20 +5,12 @@
     android:layout_height="match_parent"
     android:scrollbars="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/TextViewTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/common_google_signin_btn_text_dark_default"
-            android:text="@string/feedbacktitle"
-            android:textSize="10pt"></TextView>
-
+            <TextView
+                android:id="@+id/TextViewTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/common_google_signin_btn_text_dark_default"
+                android:textSize="10pt" />
 
         <EditText
             android:id="@+id/EditTextName"
@@ -26,29 +18,29 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="@string/feedbackname"
-            android:inputType="textPersonName"></EditText>
+            android:inputType="textPersonName"/>
 
         <EditText
             android:id="@+id/EditTextEmail"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="@string/feedbackemail"
-            android:inputType="textEmailAddress"></EditText>
+            android:inputType="textEmailAddress"/>
 
         <Spinner
             android:id="@+id/SpinnerFeedbackType"
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/feedbacktypelist"
-            android:prompt="@string/feedbacktype"></Spinner>
+            android:prompt="@string/feedbacktype"/>
 
         <EditText
             android:id="@+id/EditTextFeedbackBody"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/feedbackbody"
+            android:hint=""
             android:inputType="textMultiLine"
-            android:lines="5"></EditText>
+            android:lines="5"/>
 
         <CheckBox
             android:id="@+id/CheckBoxResponse"
@@ -57,14 +49,14 @@
             android:text="@string/feedbackresponse"></CheckBox>
 
         <Button
-            android:id="@+id/ButtonSendFeedback"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorPrimary"
-            android:onClick="sendFeedback"
-            android:text="@string/feedbackbutton"
-            android:theme="@style/Base.Widget.AppCompat.ButtonBar.AlertDialog"></Button>
+        android:id="@+id/ButtonSendFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimary"
+        android:onClick="sendFeedback"
+        android:text="@string/feedbackbutton"
+        android:theme="@style/Base.Widget.AppCompat.ButtonBar.AlertDialog">
+        </Button>
 
-    </LinearLayout>
 </ScrollView>

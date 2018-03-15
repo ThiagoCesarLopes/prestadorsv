@@ -43,7 +43,7 @@
                 android:text="Nome:" />
 
             <EditText
-                android:id="@+id/ednome"
+                android:id="@+id/editnome"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -70,7 +70,7 @@
                 android:text="Sobrenome:" />
 
             <EditText
-                android:id="@+id/edsobrenome"
+                android:id="@+id/editsobrenome"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -284,29 +284,13 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
             <Button
-                android:id="@+id/btconfirma"
-                android:layout_width="wrap_content"
+                android:id="@+id/btnConfirmar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
-                android:text="Confirma" />
+               android:text="Confirmar" />
 
-            <Button
-                android:id="@+id/btcancelar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
-                android:text="Cancela" />
-
-        </LinearLayout>
 
     </LinearLayout>
 </ScrollView>
