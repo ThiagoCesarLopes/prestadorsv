@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="5dp"
+    android:paddingTop="5dp">
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:src="@drawable/ic_servico"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:scaleType="fitXY"/>
+    <TextView
+        android:id="@+id/nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#040404"
+        android:text="Nome"
+        android:typeface="sans"
+        android:textSize="18dip"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:paddingLeft="7dp"/>
+
+    <TextView
+        android:id="@+id/nascimento"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nome"
+        android:textColor="#343434"
+        android:textSize="12dip"
+        android:text="Nascimento"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:paddingLeft="7dp"/>
+    <TextView
+        android:id="@+id/tipo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nascimento"
+        android:textColor="#343434"
+        android:textSize="12dip"
+        android:text="Tipo"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:paddingLeft="7dp"/>
+</RelativeLayout>

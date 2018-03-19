@@ -70,7 +70,7 @@
                 android:text="Sobrenome:" />
 
             <EditText
-                android:id="@+id/editsobrenome"
+                android:id="@+id/edsobrenome"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -284,12 +284,13 @@
 
         </LinearLayout>
 
-            <Button
-                android:id="@+id/btnConfirmar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
-               android:text="Confirmar" />
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:onClick="btnSave"
+            android:text="Confirmar" />
 
 
     </LinearLayout>

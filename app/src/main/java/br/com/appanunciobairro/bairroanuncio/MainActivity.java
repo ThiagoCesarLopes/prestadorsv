@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
   //  ConnectionClass connectionClass;
     EditText edtuserid,edtpass;
-    Button btnlogin;
+    Button btnlogin,btnSave;
     ProgressBar pbbar;
 
     //Declare Connection Server
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         edtuserid = (EditText) findViewById(R.id.et_username);
         edtpass = (EditText) findViewById(R.id.et_password);
         btnlogin = (Button) findViewById(R.id.btn_Login);
+        btnSave = (Button) findViewById(R.id.btnSave);
         pbbar = (ProgressBar) findViewById(R.id.pbbar);
         //pbbar.setVisibility(View.GONE);
 
