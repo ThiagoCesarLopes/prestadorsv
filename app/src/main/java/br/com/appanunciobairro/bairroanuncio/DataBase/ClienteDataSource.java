@@ -45,7 +45,7 @@ public class ClienteDataSource {
 
     private long Create(ClienteModel cliente) {
         try {
-            database.execSQL("INSERT INTO CLIENTE(sNmCliente,tDtNascimento,nIdTipo) VALUES ('" +
+            database.execSQL("INSERT INTO CLIENTE(Nome,Sobrenome,nIdTipo) VALUES ('" +
                     cliente.getNome() + "','" +
                     cliente.getSobrenome() + "', '" +
                     cliente.getnIdTipo() + "')");
@@ -56,8 +56,8 @@ public class ClienteDataSource {
 
     private long Update(ClienteModel cliente) {
         try {
-            database.execSQL("UPDATE cliente SET sNmCliente = '" +
-                    cliente.getNome() + "', tDtNascimento = '" +
+            database.execSQL("UPDATE cliente SET Nome = '" +
+                    cliente.getNome() + "', Sobrenome = '" +
                     cliente.getSobrenome() + "', nIdTipo = '" +
                     cliente.getnIdTipo() + " where Id = '" + cliente.getId() + "'");
         } catch (Exception ex) {

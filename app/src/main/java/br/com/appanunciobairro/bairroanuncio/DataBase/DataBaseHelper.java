@@ -11,9 +11,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static String TABLE_CLIENTE = "cliente";
     private static String CREATE_CLIENTE = "create table cliente"
             + "(id integer primary key, "
-            + "sNmCliente text not null, "
-            + "tDtNascimento date not null, "
-            + "nidTipo int not null);";
+            + "Nome text not null, "
+            + "Sobrenome text not null, "
+            + "nIdTipo int not null);";
 
     public DataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

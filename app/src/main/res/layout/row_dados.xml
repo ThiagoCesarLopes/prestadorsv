@@ -23,13 +23,13 @@
         android:paddingLeft="7dp"/>
 
     <TextView
-        android:id="@+id/nascimento"
+        android:id="@+id/sobrenome"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/nome"
         android:textColor="#343434"
         android:textSize="12dip"
-        android:text="Nascimento"
+        android:text="Sobrenome"
         android:layout_marginTop="1dip"
         android:layout_toRightOf="@+id/thumbnail"
         android:paddingLeft="7dp"/>
@@ -37,7 +37,6 @@
         android:id="@+id/tipo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/nascimento"
         android:textColor="#343434"
         android:textSize="12dip"
         android:text="Tipo"

@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = "EmailLauncherActivity";
 
   //  ConnectionClass connectionClass;
-    EditText edtuserid,edtpass;
+    EditText edtEmail,edtpass;
     Button btnlogin,btnSave;
     ProgressBar pbbar;
 
@@ -31,10 +31,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //connectionClass = new ConnectionClass();
-        edtuserid = (EditText) findViewById(R.id.et_username);
+        edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtpass = (EditText) findViewById(R.id.et_password);
-        btnlogin = (Button) findViewById(R.id.btn_Login);
-        btnSave = (Button) findViewById(R.id.btnSave);
+        btnSave = (Button) findViewById(R.id.btn_CadastroNovo);
         pbbar = (ProgressBar) findViewById(R.id.pbbar);
         //pbbar.setVisibility(View.GONE);
 

@@ -44,12 +44,12 @@ public class ClienteAdapter extends BaseAdapter {
         if (convertView == null)
             vi = inflater.inflate(R.layout.row_dados, null);
         TextView nome = (TextView) vi.findViewById(R.id.nome);
-        TextView nascimento = (TextView) vi.findViewById(R.id.nascimento);
+        TextView sobrenome = (TextView) vi.findViewById(R.id.sobrenome);
         TextView tipo = (TextView) vi.findViewById(R.id.tipo);
         ClienteModel cliente = data.get(position);
         String tipoCliente = (cliente.getnIdTipo() == 1 ? "Ótimo" : (cliente.getnIdTipo()== 2 ? "Bom" : "Regular"));
         nome.setText(cliente.getNome());
-        nascimento.setText(cliente.getSobrenome());
+        sobrenome.setText(cliente.getSobrenome());
         tipo.setText(tipoCliente);
         return vi;
     }

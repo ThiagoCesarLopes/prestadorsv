@@ -19,7 +19,7 @@ import java.sql.Statement;
 public class LoginActivity extends Activity {
 
     ConnectionClass connectionClass;
-    EditText edtuserid,edtpass;
+    EditText edtEmail,edtpass;
     Button btnlogin;
     ProgressBar pbbar;
 
@@ -28,8 +28,9 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+
         connectionClass = new ConnectionClass();
-        edtuserid = (EditText) findViewById(R.id.et_username);
+        edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtpass = (EditText) findViewById(R.id.et_password);
         btnlogin = (Button) findViewById(R.id.btn_Login);
         pbbar = (ProgressBar) findViewById(R.id.pbbar);
@@ -57,7 +58,7 @@ public class LoginActivity extends Activity {
     {
         String z = "";
         Boolean isSuccess = false;
-        String userid = edtuserid.getText().toString();
+        String edtEmail = edtEmail.getText().toString();
         String password = edtpass.getText().toString();
 
         Context context;
@@ -85,7 +86,7 @@ public class LoginActivity extends Activity {
 
         @Override
         protected String doInBackground(String... params) {
-            if(userid.trim().equals("")|| password.trim().equals(""))
+            if(edtEmail.trim().equals("")|| password.trim().equals(""))
                 z = "Please enter User Id and Password";
             else
             {
@@ -94,7 +95,7 @@ public class LoginActivity extends Activity {
                     if (con == null) {
                         z = "Error in connection with SQL server";
                     } else {
-                        String query = "select * from TB_USER where user_name='" + userid.toString() + "' and password='" + password.toString() + "'";
+                        String query = "select * from TB_USER where user_name='" + edtEmail.toString() + "' and password='" + password.toString() + "'";
                         Statement stmt = con.createStatement();
                         ResultSet rs = stmt.executeQuery(query);
                         Log.d(z, "Login efetuado com sucesso");
@@ -127,10 +128,10 @@ public class LoginActivity extends Activity {
     }
 
 
-
      public void onclickCadastrar (View v)
     {
+        startActivityForResult(new Intent(this,RegisterNew.class),1);
        // startActivityForResult(new Intent(this,RegisterNew.class),1);
-        setContentView(R.layout.new_user);
+      //  setContentView(R.layout.new_user);
     }
 }

@@ -17,12 +17,15 @@
 
     <string name="chooser">Send message using:</string>
     <string name="chooser_pic">Send picture using:</string>
+
+    <string name="hello">O que podemos ajudar?</string>
+
     <string name="buttontext_simpleemail_chooser">Send a message (Choose app to send) </string>
     <string name="buttontext_email">Send plaintext message (with supplied content)</string>
-    <string name="hello">O que podemos ajudar?</string>
     <string name="buttontext_simpleemail">Send plain text</string>
     <string name="buttontext_feedback">Sugestões ou Problema</string>
     <string name="buttontext_msg_pic">Send picture msg (with supplied content)</string>
+
     <string name="email_message">This is my message body.\n\nCheers,\nMe </string>
     <string name="email_subject">This is my subject</string>
     <string name="email_address">thiago2012cesar@gmail.com</string>
