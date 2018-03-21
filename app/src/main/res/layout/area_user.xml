@@ -7,7 +7,7 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Clientes já cadastrados" android:textSize="18sp"/>
+        android:text="Clientes solicitando Serviços:" android:textSize="18sp"/>
 
     <LinearLayout
         android:id="@+id/layoutnome"
@@ -54,10 +54,10 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cidade:" android:textSize="18sp"/>
+            android:text="Bairro:" android:textSize="18sp"/>
 
         <TextView
-            android:id="@+id/txtcidade"
+            android:id="@+id/txtBairro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"/>
@@ -93,23 +93,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" android:gravity="center">
 
-        <Button
-            android:id="@+id/btvoltar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Voltar" />
-
-        <Button
-            android:id="@+id/btavancar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Avançar" />
 
         <Button
             android:id="@+id/btmenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Menu" />
+            android:text="Contacta-lo"/>
 
     </LinearLayout>
 

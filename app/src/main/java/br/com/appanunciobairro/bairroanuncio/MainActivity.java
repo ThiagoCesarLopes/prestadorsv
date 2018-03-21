@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         //connectionClass = new ConnectionClass();
         edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtpass = (EditText) findViewById(R.id.et_password);
-        btnSave = (Button) findViewById(R.id.btn_CadastroNovo);
+       // btnSave = (Button) findViewById(R.id.btn_CadastroNovoPrestador);
         pbbar = (ProgressBar) findViewById(R.id.pbbar);
         //pbbar.setVisibility(View.GONE);
 
@@ -150,14 +150,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void btn_Login(View v){
-        startActivityForResult(new Intent(this,LoginActivity.class),1);
-       // setContentView(R.layout.new_user);
+       startActivityForResult(new Intent(this,ServiceAreaRestrict.class),1);
     }
 
-    public void onclickCadastrar(View v){
-        //startActivityForResult(new Intent(this,LoginActivity.class),1);
-        setContentView(R.layout.new_user);
+    public void onclickCadastrarPrestador(View v){
+        startActivityForResult(new Intent(this,RegisterNew.class),1);
+
     }
+    public void onClickesqueceusenhaPrestador(View v){
+        startActivityForResult(new Intent(this,LoginActivity.class),1);
+      //  setContentView(R.layout.new_user);
+    }
+
+
 
   }
 
