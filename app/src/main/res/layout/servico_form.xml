@@ -46,7 +46,7 @@
             android:scaleY="0.75"></Spinner>
 
         <Spinner
-            android:id="@+id/SpinnerListaBairro"
+            android:id="@+id/SpinnerBairro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -59,7 +59,7 @@
     </RelativeLayout>
 
     <Spinner
-        android:id="@+id/SpinnerFeedbackType"
+        android:id="@+id/SpinnerUrgencia"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -67,7 +67,7 @@
         android:prompt="@string/CadastrolistUrgencia"></Spinner>
 
     <EditText
-        android:id="@+id/edNome"
+        android:id="@+id/edtTituloServico"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -77,7 +77,7 @@
         android:singleLine="true" />
 
     <EditText
-        android:id="@+id/EditTextFeedbackBody"
+        android:id="@+id/edtDescricaoServico"
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:layout_marginTop="15dp"
@@ -87,7 +87,7 @@
     </EditText>
 
     <Button
-        android:id="@+id/btnconfirmar"
+        android:id="@+id/btnService"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"

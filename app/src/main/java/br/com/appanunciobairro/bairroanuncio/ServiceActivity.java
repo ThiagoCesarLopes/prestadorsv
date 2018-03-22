@@ -1,64 +1,83 @@
 package br.com.appanunciobairro.bairroanuncio;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
 
-public class ServiceActivity  extends Activity
-{
- //   Button btnConfirmar;
- //   Spinner SpinnerUF;
- //   ArrayAdapter<String> array;
-//    ArrayList<modelState> CadastrolistUF;  //List items Array
-  //  private ConnectionClass connectionClass;
+public class ServiceActivity extends Activity {
+    Spinner SpinnerUF;
+    PreparedStatement stmt;
+    ResultSet rs;
+    ConnectionClass connectionClass;
+    Connection con = connectionClass.CONN();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.servico_form);
-
-      //  CadastrolistUF = new ArrayList<modelState>();
-      //  connectionClass = new ConnectionClass();
-       // getStates();
+    protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.servico_form);
 
 
-       // ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this,R.array.CadastrolistUF,android.R.layout.activity_list_item);
-       // SpinnerUF = (Spinner) findViewById(R.id.SpinnerUF);
-       // SpinnerUF.setAdapter(adapter);
+        SpinnerUF = (Spinner) findViewById(R.id.SpinnerUF);
 
+        String query = "select flg_estado from City";
+        try {
+                stmt = con.prepareStatement(query);
+                rs = stmt.executeQuery();
+                ArrayList<String> data = new ArrayList<String>();
 
-      //  btnConfirmar = (Button) findViewById(R.id.btnconfirmar);
+            while (rs.next())
+            {
+            String id = rs.getString("CountryName");
+            data.add(id);
+            }
+                String[] array = data.toArray(new String[0]);
+                ArrayAdapter NoCoreAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, data);
+                SpinnerUF.setAdapter(NoCoreAdapter);
 
-        //array = new ArrayAdapter(this, android.R.layout.activity_list_item, CadastrolistUF.subList(0,1));
-        //SpinnerUF.setAdapter(array);
+            }
+        catch (SQLException e)
+             {
+         e.printStackTrace();
+            }
 
-      //  btnConfirmar.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View v) {
-
-        //    }
-       // });
+        SpinnerUF.setOnItemSelectedListener(new OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,int position, long id)
+            {
+                String name = SpinnerUF.getSelectedItem().toString();
+                Toast.makeText(ServiceActivity.this, name, Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) { }
+        });
 
     }
+
     public void  OnclickCadastrarServico (View v){
-        startActivityForResult(new Intent(this,LoginActivity.class),1);
+        //Save();
+        startActivityForResult(new Intent(this,ListaServicoActivity.class),1);
     }
-
-
 
 }
+
+
 
 
 
