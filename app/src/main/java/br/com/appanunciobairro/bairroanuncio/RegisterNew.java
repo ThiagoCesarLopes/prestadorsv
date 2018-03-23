@@ -33,8 +33,8 @@ public class RegisterNew extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_user);
-
         connectionClass = new ConnectionClass();
+
 
         btn_CadastroUser = (Button) findViewById(R.id.btn_CadastroNovo);
 

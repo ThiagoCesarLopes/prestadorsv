@@ -18,56 +18,61 @@ public class ServiceActivity extends Activity {
     Spinner SpinnerUF;
     PreparedStatement stmt;
     ResultSet rs;
-    ConnectionClass connectionClass;
+    String z = "";
 
+    ConnectionClass connectionClass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.servico_form);
-        Connection con = connectionClass.CONN();
-       SpinnerUF = findViewById(R.id.SpinnerUF);
 
-       String query = "select state_id, name from City";
-       try {
-               stmt = con.prepareStatement(query);
-               rs = stmt.executeQuery();
-               ArrayList<String> data = new ArrayList<String>();
+        //add aqui bill
+        connectionClass = new ConnectionClass();
+        SpinnerUF = findViewById(R.id.SpinnerUF);
 
-           while (rs.next())
-           {
-           Integer id = rs.getInt("state_id");
-           String name = rs.getString("name");
 
-           data.add(id, name);
-           }
-               ArrayAdapter NoCoreAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1, data);
-               SpinnerUF.setAdapter(NoCoreAdapter);
+        String query = "select cidade_id, flg_estado from City";
+        try {
+            //alterei de lugar aqui bill
+            Connection con = connectionClass.CONN();
 
-           }
-       catch (SQLException e)
+
+                stmt = con.prepareStatement(query);
+                rs = stmt.executeQuery();
+                ArrayList<String> data = new ArrayList<String>();
+
+                //tem probelma no while para aceitar 2 parametros (bill)
+                while (rs.next()) {
+                    String id = rs.getString("flg_estado");
+                    //String name = rs.getString("cidade_id");
+                    data.add(id);
+                    //   data.add(id, name);
+                }
+
+                ArrayAdapter NoCoreAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,data);
+                SpinnerUF.setAdapter(NoCoreAdapter);
+
+            }
+        catch(SQLException e)
             {
-        e.printStackTrace();
-           }
+                e.printStackTrace();
 
-       SpinnerUF.setOnItemSelectedListener(new OnItemSelectedListener()
-       {
-           @Override
-           public void onItemSelected(AdapterView<?> parent, View view,int position, long id)
-           {
-               String name = SpinnerUF.getSelectedItem().toString();
-               Toast.makeText(ServiceActivity.this, name, Toast.LENGTH_SHORT).show();
-           }
-           @Override
-           public void onNothingSelected(AdapterView<?> parent) { }
-       });
+            }
 
+        SpinnerUF.setOnItemSelectedListener(new OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,int position, long id)
+            {
+                String name = SpinnerUF.getSelectedItem().toString();
+                Toast.makeText(ServiceActivity.this, name, Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) { }
+        });
+    }
     }
 
-
-
-}
 
 
 
