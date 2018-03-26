@@ -60,37 +60,7 @@ public class MainActivity extends AppCompatActivity {
         spec.setIndicator("Contato");
         host.addTab(spec);
     }
-        // Send a simple plain text email (no contents supplied)
-    public void sendSimpleEmail(View button) {
-        try {
-            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-            emailIntent.setType("plain/text");
-            startActivity(emailIntent);
-        } catch (Exception e) {
-            Log.e(LOG_TAG, "sendSimpleEmail() failed to start activity.", e);
-            Toast.makeText(this, "No handler", Toast.LENGTH_LONG).show();
-        }
-    }
 
-    public void chooseEmail(View button) {
-
-        try {
-            Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-            emailIntent.setType("plain/text");
-            startActivity(Intent.createChooser(emailIntent,
-                    "Send your email in:"));
-        } catch (Exception e) {
-            Log.e(LOG_TAG, "chooseEmail() failed to start activity.", e);
-            Toast.makeText(this, "No handler", Toast.LENGTH_LONG).show();
-        }
-    }
-
-    public void onclicklaunchForm(View v) {
-
-     //   Intent launchFormActivity = new Intent(this, FormActivity.class);
-      //  startActivity(launchFormActivity);
-         startActivityForResult(new Intent(this,FormActivity.class),1);
-    }
 
     public void onclickPintor(View v){
             startActivityForResult(new Intent(this,ServiceActivity.class),1);
@@ -148,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     public void btn_Login(View v){
        startActivityForResult(new Intent(this,ServiceAreaRestrict.class),1);
     }
@@ -158,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void onClickesqueceusenhaPrestador(View v){
-        startActivityForResult(new Intent(this,LoginActivity.class),1);
+        startActivityForResult(new Intent(this,EsqueceuSenhaActivity.class),1);
       //  setContentView(R.layout.new_user);
     }
 

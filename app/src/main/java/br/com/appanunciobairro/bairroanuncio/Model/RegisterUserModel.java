@@ -1,6 +1,6 @@
-package br.com.appanunciobairro.bairroanuncio;
+package br.com.appanunciobairro.bairroanuncio.Model;
 
-public class RegisterUserClass {
+public class RegisterUserModel {
 
 
         public String flg_estado; //Image URL

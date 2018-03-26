@@ -16,47 +16,69 @@
         android:text="Preencha o Serviço:"
         android:textSize="10pt"></TextView>
 
-    <RelativeLayout
-        android:id="@+id/RelativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="25dp">
+    <TabHost
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-        <Spinner
-            android:id="@+id/SpinnerUF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/CadastrolistUF"
-            android:gravity="left|top"
-            android:prompt="@string/CadastrolistUF"
-            android:scaleX="0.75"
-            android:scaleY="0.75"></Spinner>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/SpinnerCidade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/SpinnerUF"
-            android:entries="@array/CadastrolistCidade"
-            android:gravity="top|center"
-            android:prompt="@string/CadastrolistCidade"
-            android:scaleX="0.75"
-            android:scaleY="0.75"></Spinner>
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        <Spinner
-            android:id="@+id/SpinnerBairro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:entries="@array/ListaBairro"
-            android:gravity="right"
-            android:prompt="@string/ListaBairro"
-            android:scaleX="0.75"
-            android:scaleY="0.75"></Spinner>
-    </RelativeLayout>
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/Escolha"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <Spinner
+                        android:id="@+id/SpinnerUF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/CadastrolistUF"
+                        android:prompt="@string/CadastrolistUF"
+                        android:scaleX="0.75"
+                        android:scaleY="0.75"></Spinner>
+
+                    <Spinner
+                        android:id="@+id/SpinnerCidade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_below="@+id/SpinnerUF"
+                        android:entries="@array/CadastrolistCidade"
+                        android:prompt="@string/CadastrolistCidade"
+                        android:scaleX="0.75"
+                        android:scaleY="0.75"></Spinner>
+
+                    <Spinner
+                        android:id="@+id/SpinnerBairro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/SpinnerCidade"
+                        android:layout_alignBottom="@+id/SpinnerCidade"
+                        android:layout_toEndOf="@+id/SpinnerCidade"
+                        android:entries="@array/ListaBairro"
+                        android:prompt="@string/ListaBairro"
+                        android:scaleX="0.75"
+                        android:scaleY="0.75"></Spinner>
+                </LinearLayout>
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+
+
 
     <Spinner
         android:id="@+id/SpinnerUrgencia"

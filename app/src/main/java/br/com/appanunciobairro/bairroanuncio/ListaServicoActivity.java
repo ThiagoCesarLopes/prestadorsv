@@ -26,10 +26,12 @@ import java.util.List;
 import java.sql.Connection;
 import java.lang.Object;
 
+import br.com.appanunciobairro.bairroanuncio.Model.ItensServiceModel;
+
 public class ListaServicoActivity extends AppCompatActivity {
 
 
-    private ArrayList<classListItems> itemArrayList;  //List items Array
+    private ArrayList<ItensServiceModel> itemArrayList;  //List items Array
     private MyAppAdapter myAppAdapter; //Array Adapter
     private ListView listView; // Listview
     private boolean success = false; // boolean
@@ -47,7 +49,7 @@ public class ListaServicoActivity extends AppCompatActivity {
         score=(TextView) findViewById(R.id.score);//Valor do RatingBar -score
         listView = (ListView) findViewById(R.id.listView); //Listview Declaration
         connectionClass = new ConnectionClass(); // Connection Class Initialization
-        itemArrayList = new ArrayList<classListItems>(); // Arraylist Initialization
+        itemArrayList = new ArrayList<ItensServiceModel>(); // Arraylist Initialization
 
         // Calling Async Task
         SyncData orderData = new SyncData();
@@ -90,7 +92,7 @@ public class ListaServicoActivity extends AppCompatActivity {
                         while (rs.next())
                         {
                             try {
-                                itemArrayList.add(new classListItems(rs.getString("name"), rs.getString("last_name"),rs.getString("url_picture"),rs.getInt("score"),rs.getString("desc_bairro")));
+                                itemArrayList.add(new ItensServiceModel(rs.getString("name"), rs.getString("last_name"),rs.getString("url_picture"),rs.getInt("score"),rs.getString("desc_bairro")));
                             } catch (Exception ex) {
                                 ex.printStackTrace();
                             }
@@ -112,11 +114,6 @@ public class ListaServicoActivity extends AppCompatActivity {
             }
             return msg;
         }
-
-
-
-
-
 
         @Override
         protected void onPostExecute(String msg) // disimissing progress dialoge, showing error and setting up my listview
@@ -152,16 +149,16 @@ public class ListaServicoActivity extends AppCompatActivity {
             ImageView imageView;
         }
 
-        public List<classListItems> parkingList;
+        public List<ItensServiceModel> parkingList;
 
         public Context context;
-        ArrayList<classListItems> arraylist;
+        ArrayList<ItensServiceModel> arraylist;
 
-        private MyAppAdapter(List<classListItems> apps,Context context)
+        private MyAppAdapter(List<ItensServiceModel> apps,Context context)
         {
             this.parkingList = apps;
             this.context = context;
-            arraylist = new ArrayList<classListItems>();
+            arraylist = new ArrayList<ItensServiceModel>();
             arraylist.addAll(parkingList);
         }
 

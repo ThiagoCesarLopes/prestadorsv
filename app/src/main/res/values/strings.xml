@@ -52,34 +52,13 @@
     <string name="feedbackmessagebody_responseno">Does not require a response</string>
     <string name="feedbackmessagesubject_format">Application Feedback (%1$s)</string>
 
-    <string name="CadastrolistUF">UF:</string>
-    <string name="CadastrolistUF1">SP</string>ing>
-
-    <string name="CadastrolistCidade">Cidades:</string>
-    <string name="CadastrolistCidade1">São Paulo</string>
-
-    <!--Inicio  Lista de Bairros -->
-    <string name="SpinnerListaBairro">ListaBairro</string>
-    <!--A -->
-    <string name="ListaBairro"> Bairro:</string>
-    <string name="ListaBairro1">A</string>
-    <string name="ListaBairro2">Aclimação</string>
-    <string name="ListaBairro3">Água Branca</string>
-    <string name="ListaBairro4">Água Fria</string>
-    <string name="ListaBairro5">Água Funda</string>
-    <string name="ListaBairro6">Água Rasa</string>
-    <string name="ListaBairro7">Alto da Boa Vista</string>
-    <string name="ListaBairro8">Alto da Lapa</string>
-    <string name="ListaBairro9">Alto da Mooca</string>
-    <string name="ListaBairro10">Alto da Riviera</string>
-    <string name="ListaBairro11">Alto de Pinheiros</string>
-    <string name="ListaBairro12">Alto do Pari</string>
-    <string name="ListaBairro13">Altos de Vila Prudente</string>
-    <string name="ListaBairro14">Americanópolis</string>
-    <string name="ListaBairro15">Anhanguera</string>
-    <string name="ListaBairro16">Artur Alvim</string>
-    <string name="ListaBairro17">Associação Sobradinho</string>
-    <!--B -->
+    <!--Inicio Lista de Estado Cidade Bairros -->
+    <string name="spinnerUF">Escolha o Estado:</string>
+    <string name="CadastrolistUF"> Escolha o Estado:</string>
+    <string name="spinnerCidade">Escolha a Cidades:</string>
+    <string name="CadastrolistCidade"> Escolha o Cidade:</string>
+    <string name="SpinnerListaBairro">Lista Bairro</string>
+    <string name="ListaBairro"> Escolha o Bairro:</string>
     <!--Fim Lista de Bairros -->
 
 </resources>

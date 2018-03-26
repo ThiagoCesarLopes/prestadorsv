@@ -12,40 +12,18 @@
         <item>@string/CadastrolistUrgencia1</item>
         <item>@string/CadastrolistUrgencia2</item>
         <item>@string/CadastrolistUrgencia3</item>
-
-
-    </string-array>
-
-    <string-array name="CadastrolistUF">
-        <item>@string/CadastrolistUF</item>
-        <item>@string/CadastrolistUF</item>
-    </string-array>
-    <string-array name="CadastrolistCidade">
-        <item>@string/CadastrolistCidade</item>
-        <item>@string/CadastrolistCidade</item>
     </string-array>
 
 
     <!--Inicio  Lista de Bairros -->
+    <string-array name="CadastrolistUF">
+        <item>@string/CadastrolistUF</item>
+    </string-array>
+    <string-array name="CadastrolistCidade">
+        <item>@string/CadastrolistCidade</item>
+    </string-array>
     <string-array name="ListaBairro">
         <item>@string/ListaBairro</item>
-        <item>@string/ListaBairro1</item>
-        <item>@string/ListaBairro2</item>
-        <item>@string/ListaBairro3</item>
-        <item>@string/ListaBairro4</item>
-        <item>@string/ListaBairro5</item>
-        <item>@string/ListaBairro6</item>
-        <item>@string/ListaBairro7</item>
-        <item>@string/ListaBairro8</item>
-        <item>@string/ListaBairro9</item>
-        <item>@string/ListaBairro10</item>
-        <item>@string/ListaBairro11</item>
-        <item>@string/ListaBairro12</item>
-        <item>@string/ListaBairro13</item>
-        <item>@string/ListaBairro14</item>
-        <item>@string/ListaBairro15</item>
-        <item>@string/ListaBairro16</item>
-        <item>@string/ListaBairro17</item>
     </string-array>
     <!--Fim  Lista de Bairros -->
 </resources>

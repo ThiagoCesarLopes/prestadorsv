@@ -1,13 +1,13 @@
-package br.com.appanunciobairro.bairroanuncio;
+package br.com.appanunciobairro.bairroanuncio.Model;
 
-public class classListItems {
+public class ItensServiceModel {
     public String img; //Image URL
     public String name; //Name
     public String last_name; //last_Name
     public int score; //last_Name
     public String desc_bairro; //last_Name
 
-    public classListItems(String name,String last_name,String url_picture, int score, String desc_bairro)
+    public ItensServiceModel(String name,String last_name,String url_picture,int score,String desc_bairro)
 
     {
         this.name = name;
