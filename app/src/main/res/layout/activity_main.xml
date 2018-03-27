@@ -245,6 +245,7 @@
                     android:layout_height="match_parent"
                     android:background="#ffffff"
                     android:orientation="vertical"
+                    android:onClick="tabPrestador"
                     android:text="Cadastro do Prestador">
 
                     <LinearLayout
@@ -270,35 +271,6 @@
                             android:layout_marginBottom="24dp"
                             android:src="@drawable/ic_servico" />
 
-                        <!-- Email Label -->
-                        <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginTop="8dp">
-
-                            <EditText
-                                android:id="@+id/edtEmail"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="Email"
-                                android:inputType="textEmailAddress" />
-                        </android.support.design.widget.TextInputLayout>
-
-                        <!-- Password Label -->
-                        <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginTop="8dp">
-
-                            <EditText
-                                android:id="@+id/et_password"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="Password"
-                                android:inputType="textPassword" />
-                        </android.support.design.widget.TextInputLayout>
 
                         <android.support.v7.widget.AppCompatButton
                             android:id="@+id/btn_login"
@@ -332,7 +304,7 @@
                             android:text="Esqueceu a Senha?"
                             android:textColor="@color/colorPrimary"
                             android:textSize="14sp"
-                            android:paddingBottom="10dp"
+                            android:paddingBottom="150dp"
                             android:textStyle="bold|italic" />
 
                     </LinearLayout>

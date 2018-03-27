@@ -97,7 +97,7 @@ public class ServiceActivity extends Activity {
                         //int id = rs.getInt("id_cidade");
                         //data.add(name);
                          c.setId(rs.getInt("cidade_id"));
-                        c.setName(rs.getString("desc_cidade"));
+                       // c.setName(rs.getString("desc_cidade"));
                         data.add(c);
                     }
 

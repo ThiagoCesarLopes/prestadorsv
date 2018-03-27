@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void btn_Login(View v){
-       startActivityForResult(new Intent(this,ServiceAreaRestrict.class),1);
+       startActivityForResult(new Intent(this,LoginActivity.class),1);
     }
 
     public void onclickCadastrarPrestador(View v){
