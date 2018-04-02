@@ -1,27 +1,14 @@
 package br.com.appanunciobairro.bairroanuncio;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.view.ContextMenu;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
-import java.util.List;
-
-import br.com.appanunciobairro.bairroanuncio.Adapter.ClienteAdapter;
-import br.com.appanunciobairro.bairroanuncio.DataBase.ClienteDataSource;
-import br.com.appanunciobairro.bairroanuncio.Model.ClienteModel;
+import br.com.appanunciobairro.bairroanuncio.Adapter.UserAdapter;
 
 
 //public class ServiceAreaRestrict extends Fragment {
     public class ServiceAreaRestrict extends AppCompatActivity {
-    private ClienteAdapter adapter;
+    private UserAdapter adapter;
 
    // @Override
    // public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
@@ -45,7 +32,7 @@ import br.com.appanunciobairro.bairroanuncio.Model.ClienteModel;
                 //pega o valor do item
     //           long nCdCliente = adapter.getItemId(position);
                 //chama a tela de cadastro
-               // Intent cadastro = new Intent(getActivity(),RegisterNew.class);
+               // Intent cadastro = new Intent(getActivity(),UserRegisterNew.class);
                // cadastro.putExtra("nCdCliente",nCdCliente);
                // startActivityForResult(cadastro,1);
       //      }
@@ -54,10 +41,10 @@ import br.com.appanunciobairro.bairroanuncio.Model.ClienteModel;
         }
 
   //  private void PreencheLista(ListView lista) {
-  //      ClienteDataSource ds = new ClienteDataSource(getActivity());
+  //      UserDataSource ds = new UserDataSource(getActivity());
 
-  //      List<ClienteModel> listaClientes = ds.getAll();
-    //   // adapter = new ClienteAdapter(getActivity(),listaClientes);
+  //      List<UserModel> listaClientes = ds.getAll();
+    //   // adapter = new UserAdapter(getActivity(),listaClientes);
     //    lista.setAdapter(adapter);
    //     registerForContextMenu(lista);
   //  }
@@ -86,7 +73,7 @@ import br.com.appanunciobairro.bairroanuncio.Model.ClienteModel;
  //       switch (item.getItemId()) {
   //          case 0:
   //              long id = adapter.getItemId(info.position);
-  //              ClienteDataSource ds = new ClienteDataSource(getActivity());
+  //              UserDataSource ds = new UserDataSource(getActivity());
   //              ds.delete(String.valueOf(id));
   //              ListView lista = (ListView)getActivity().findViewById(R.id.listView);
   //              PreencheLista(lista);

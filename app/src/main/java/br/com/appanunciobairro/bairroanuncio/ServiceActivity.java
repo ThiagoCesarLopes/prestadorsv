@@ -5,13 +5,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.database.Cursor;
 
 import br.com.appanunciobairro.bairroanuncio.Model.CidadeModel;
 
@@ -26,6 +30,7 @@ public class ServiceActivity extends Activity {
     PreparedStatement stmt;
     ResultSet rs;
     String z = "";
+    TextView myTextView;
 
         ConnectionClass connectionClass;
 
@@ -65,47 +70,76 @@ public class ServiceActivity extends Activity {
         SpinnerUF.setOnItemSelectedListener(new OnItemSelectedListener()
         {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view,int position, long id)
+            public void onItemSelected(AdapterView<?> parent, View view,int i, long id)
             {
+
                 uf = SpinnerUF.getSelectedItem().toString();
                 Toast.makeText(ServiceActivity.this, uf, Toast.LENGTH_SHORT).show();
                 carregaCidade(uf);
             }
             @Override
-            public void onNothingSelected(AdapterView<?> parent) { }
+            public void onNothingSelected(AdapterView<?> i) { }
         });
 
 
     }
 
-         private void carregaCidade(String uf)
-         {
+        private void carregaCidade(String uf) {
+
                 SpinnerCidade = findViewById(R.id.SpinnerCidade);
 
-                String querycidade = "select distinct desc_cidade ,cidade_id from City where flg_estado like " + "'" + uf + "'";
+         int selecao = i;
+            if (selecao == 0){
+                if (selecao == 0){
+                    SpinnerCidade.setEnabled(false);
+                }
+                else if (selecao == 1){
+                    SpinnerCidade.setEnabled(true);
+
+                    List<String> list = new ArrayList<String>();
+                    SpinnerCidade.setEnabled(false);
+                }
+
+                    String querycidade = "select distinct desc_cidade ,cidade_id from City where flg_estado like " + "'" + uf + "'";
                 try {
 
                     Connection con = connectionClass.CONN();
-
                     stmt = con.prepareStatement(querycidade);
                     rs = stmt.executeQuery();
+
                     ArrayList<CidadeModel> data = new ArrayList<CidadeModel>();
+                    CidadeModel c = new CidadeModel();
 
                     while (rs.next()) {
-                       CidadeModel c = new CidadeModel();
-                        //String name = rs.getString("desc_cidade");
+
+                       // String name = rs.getString("cidade_id");
                         //int id = rs.getInt("id_cidade");
                         //data.add(name);
-                         c.setId(rs.getInt("desc_cidade"));
-                       // c.setName(rs.getString("desc_cidade"));
+                        c.setId(rs.getInt("cidade_id"));
+                        c.setName(rs.getString("desc_cidade"));
+
                         data.add(c);
                     }
 
-                    ArrayAdapter NoCoreAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,data);
-                    NoCoreAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-                    SpinnerCidade.setAdapter(NoCoreAdapter);
-                    SpinnerCidade.setSelection(0);
+                        ArrayAdapter<CidadeModel> adapter = new ArrayAdapter<CidadeModel>(this,android.R.layout.simple_list_item_1,data);
+                        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 
+//                    ArrayAdapter<String> dataAdapter= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
+//                    dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//                    dataAdapter.notifyDataSetChanged();
+//                    SpinnerCidade.setAdapter(dataAdapter);
+
+                    Cursor cursor =  null;
+                    for (int i = 0; i < SpinnerCidade.getAdapter().getCount(); i++)
+                    {
+                        if (SpinnerCidade.getItemIdAtPosition(i) == Integer
+                                .valueOf(cursor.getInt(cursor.getColumnIndexOrThrow("desc_cidade"))))
+                        {
+                            SpinnerCidade.setAdapter(adapter);
+                            SpinnerCidade.setSelection(i);
+                            break;
+                        }
+                    }
                 }
                 catch(SQLException e)
                 {
@@ -130,8 +164,7 @@ public class ServiceActivity extends Activity {
 
          }
 
-         private void carregaBairro(int cidade_id)
-    {
+        private void carregaBairro(int cidade_id) {
         SpinnerBairro = findViewById(R.id.SpinnerBairro);
 
         String querycidade = "select bairro_id,desc_bairro from NEIGHBORHOOD where cidade_id = " +  cidade_id ;
@@ -171,7 +204,17 @@ public class ServiceActivity extends Activity {
 
 
     }
-    }
+
+        public void OnclickCadastrarServico (View v) {
+            //startActivityForResult(new Intent(this,ListaServicoActivity.class),1);
+                Intent i = new Intent(this, LoginActivity.class);
+                i.putExtra("userid", 2);
+                i.putExtra("nCdCliente", 0);
+                startActivity(i);
+        }
+}
+
+
 
 
 

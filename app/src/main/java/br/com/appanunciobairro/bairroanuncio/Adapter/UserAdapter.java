@@ -8,17 +8,17 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import java.util.ArrayList;
-import br.com.appanunciobairro.bairroanuncio.Model.ClienteModel;
+import br.com.appanunciobairro.bairroanuncio.Model.UserModel;
 import br.com.appanunciobairro.bairroanuncio.R;
 
 
-public class ClienteAdapter extends BaseAdapter {
+public class UserAdapter extends BaseAdapter {
 
     private Activity activity;
-    private ArrayList<ClienteModel> data;
+    private ArrayList<UserModel> data;
     private static LayoutInflater inflater = null;
 
-    public ClienteAdapter(Activity a, ArrayList<ClienteModel> d)
+    public UserAdapter(Activity a,ArrayList<UserModel> d)
     {
         activity = a;
         data = d;
@@ -35,7 +35,7 @@ public class ClienteAdapter extends BaseAdapter {
     }
     @Override
     public long getItemId(int position) {
-        ClienteModel cliente = data.get(position);
+        UserModel cliente = data.get(position);
         return cliente.getId();
     }
     @Override
@@ -43,14 +43,15 @@ public class ClienteAdapter extends BaseAdapter {
         View vi = convertView;
         if (convertView == null)
             vi = inflater.inflate(R.layout.row_dados, null);
+
         TextView nome = (TextView) vi.findViewById(R.id.nome);
         TextView sobrenome = (TextView) vi.findViewById(R.id.sobrenome);
-        TextView tipo = (TextView) vi.findViewById(R.id.tipo);
-        ClienteModel cliente = data.get(position);
-        String tipoCliente = (cliente.getnIdTipo() == 1 ? "Ótimo" : (cliente.getnIdTipo()== 2 ? "Bom" : "Regular"));
+
+        UserModel cliente = data.get(position);
+
         nome.setText(cliente.getNome());
         sobrenome.setText(cliente.getSobrenome());
-        tipo.setText(tipoCliente);
+
         return vi;
     }
 

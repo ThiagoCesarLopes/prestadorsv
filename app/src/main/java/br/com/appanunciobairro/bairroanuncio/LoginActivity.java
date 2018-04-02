@@ -51,8 +51,7 @@ public class LoginActivity extends Activity {
              }
         });
 
-        }
-
+     }
 
     public class DoLogin extends AsyncTask<String,String,String>
     {
@@ -130,13 +129,19 @@ public class LoginActivity extends Activity {
 
      public void onclickCadastrar (View v)
     {
-        startActivityForResult(new Intent(this,RegisterNew.class),1);
-       // startActivityForResult(new Intent(this,RegisterNew.class),1);
-      //  setContentView(R.layout.new_user);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String userid = extras.getString("userid");
+        Intent i = new Intent(this, UserRegisterNew.class);
+        i.putExtra("userid", userid);
+        startActivity(i);
+        }
+        //startActivityForResult(new Intent(this,UserRegisterNew.class),1);
+
     }
 
     public void onClickesqueceusenha (View v)
     {
-        startActivityForResult(new Intent(this,RegisterNew.class),1);
+        startActivityForResult(new Intent(this,UserRegisterNew.class),1);
     }
 }

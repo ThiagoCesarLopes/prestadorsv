@@ -2,13 +2,11 @@ package br.com.appanunciobairro.bairroanuncio;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TabHost;
-import android.widget.Toast;
 
 import java.sql.Connection;
 
@@ -123,7 +121,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onclickCadastrarPrestador(View v){
-        startActivityForResult(new Intent(this,RegisterNew.class),1);
+
+        Intent i = new Intent(this, UserRegisterNew.class);
+        i.putExtra("userid", 1);
+        startActivity(i);
+        //startActivityForResult(new Intent(this,UserRegisterNew.class),1);
 
     }
     public void onClickesqueceusenhaPrestador(View v){

@@ -2,7 +2,7 @@ package br.com.appanunciobairro.bairroanuncio.Model;
 
 import java.sql.Date;
 
-public class ClienteModel {
+public class UserModel {
     private int id;
     private String Nome;
     private String Sobrenome;
